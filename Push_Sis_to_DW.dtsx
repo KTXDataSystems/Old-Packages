@@ -1,0 +1,1019 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/15/2018 12:51:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KTX-SSXS"
+  DTS:CreatorName="ATX\WBartley"
+  DTS:DTSID="{90672248-0B06-4AAB-9B95-8FA550E1A157}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3025.39"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Push_Sis_to_DW"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="165"
+  DTS:VersionGUID="{B0B48CD5-DF49-43C0-ADDC-97548039BA17}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SM_Application_Data]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EE639DAA-1F38-49A5-BFD4-B3AF1E0FDF6E}"
+      DTS:ObjectName="SM_Application_Data">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="S:\Transfer_Folders\Schoolmint\application_index.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{F8273389-8E55-4B9F-84A8-0DA5DDC50C17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="applicant_id"
+              DTS:DTSID="{18324726-6DDD-4C1F-B66E-645B050DC042}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="account_id"
+              DTS:DTSID="{1AB9EA58-FB37-424D-9F25-5932F12CF0AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="student_id"
+              DTS:DTSID="{6DD453FA-AB42-4033-BF98-1C038F97A7F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="application_id"
+              DTS:DTSID="{0F5981A2-8100-43F2-8F02-00AADD092F7C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{E1161A9E-5A31-4C6B-8EE5-1451414336B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="middle_name"
+              DTS:DTSID="{45F57ECF-04A5-48AA-A4B4-C67C0DC1298A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{CA47A4F5-3F1F-441B-8D58-C75F7A099CA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="birth_date"
+              DTS:DTSID="{EA489917-F4AF-4D08-8E92-18BE40CD635C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{8171D9C7-11BB-4488-9389-0D531D398FCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{6CF04459-2150-452E-9B16-D8F253357599}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="guardian_first_name"
+              DTS:DTSID="{A5B37EB3-084B-4136-B159-F2D7F42C0E0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="guardian_last_name"
+              DTS:DTSID="{D3EF74D2-76F9-4500-B662-176AEACB15A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone_number"
+              DTS:DTSID="{9C3F9367-7B76-40E8-90BA-9FC09F049845}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="home_phone_number"
+              DTS:DTSID="{50F1C5DD-9ACB-467F-B9A1-C625FA155B2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="street1"
+              DTS:DTSID="{525E16DA-6BEB-41CE-9E0B-22BCB8750139}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="street2"
+              DTS:DTSID="{E0B505DE-108F-44A8-BD69-69C298F44A4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zipcode"
+              DTS:DTSID="{84141620-DB60-4EA2-9FE7-3CDA0362D2AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{BCC1F296-1382-4341-859E-A616BA6246C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{01CB39AC-119B-46B6-A21B-6FC6DE8521C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="lives_with"
+              DTS:DTSID="{2C249625-A68B-428A-BB4E-5D28CF769BCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="application_type"
+              DTS:DTSID="{418DF6E2-5404-4863-B074-B980EC9B0007}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created_by"
+              DTS:DTSID="{5813D82B-DC8D-4B7C-9FD4-07429BB4FB6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="submission_date"
+              DTS:DTSID="{D49CA19C-A67B-4D18-A3CA-8D902145796F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{F2331B9F-ADC6-4622-8B57-04E192D0AE0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="waitlist_number"
+              DTS:DTSID="{4BDC6056-C558-48FD-9F00-A928D5D3756E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="304"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_timestamp"
+              DTS:DTSID="{4E32FFF6-EB4D-4F33-9E7D-7460C4D4FFCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="offered_date"
+              DTS:DTSID="{508728EA-6FCF-4BC8-ABD7-5B4AD715E076}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="304"
+              DTS:TextQualified="True"
+              DTS:ObjectName="updated_at"
+              DTS:DTSID="{82BA7ED6-BE32-4066-9D12-A15D77B9EA91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="current_grade_level"
+              DTS:DTSID="{678AEAE8-509C-438F-891B-13787E1C02A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="grade_name"
+              DTS:DTSID="{BC465776-CEE6-44EC-8D05-F14ABF39EE35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="school_name"
+              DTS:DTSID="{147CEABC-16C5-4024-A200-9021C86CE954}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="current_school_name"
+              DTS:DTSID="{64B20A23-35E5-42A1-AB50-7B854E52D5BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="priorities"
+              DTS:DTSID="{8854EC02-5E24-4222-8106-BDD426430463}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district_name"
+              DTS:DTSID="{7C9FD5E4-3521-469B-AA29-D3F06AEEC736}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="school_group"
+              DTS:DTSID="{D861DC09-4462-410A-B6AA-25D894DFD5FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="preferred_language"
+              DTS:DTSID="{362D11B5-3B9E-4803-863A-893CE8D3A00B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sis_id"
+              DTS:DTSID="{EAE16637-93BA-423E-A258-ACDD901EF102}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sis_local_id"
+              DTS:DTSID="{616F61B2-D5A5-4B5E-92B4-32BA819ABA3B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AbsenceReasons"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5CCACE0B-DD23-4114-BD71-6B76F42A38B5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AbsenceReasons"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="--aus&#xA;&#xA;delete from ADA_Absence_reasons&#xA;insert into ADA_Absence_reasons&#xA;select bl.school_year&#xA;&#x9;,'AUS' as ktx_district&#xA;&#x9;,(select name from aus_reg_building rb where rb.building = bl.building) as School_Name -- Varchar(20),&#xA;&#x9;,case when bl.building &lt; 10 then '00' + cast(bl.building as char(1)) when bl.building &gt; 9 and bl.building &lt; 100 then '0' + cast(bl.building as char(2)) else cast(bl.building as char(3)) end as school_id&#xA;&#x9;,reg.STUDENT_ID as student_id&#xA;&#x9;,reg.FIRST_NAME as name_first&#xA;&#x9;,reg.LAST_NAME as name_last&#xA;&#x9;,'AUS_'+case when bl.building &lt; 10 then '00' + cast(bl.building as char(1)) when bl.building &gt; 9 and bl.building &lt; 100 then '0' + cast(bl.building as char(2)) else cast(bl.building as char(3)) end + '_' + reg.STUDENT_ID as unique_concatenate&#xA;&#x9;,(select max(grade) from aus_reg_entry_with entwith where entwith.STUDENT_ID = bl.STUDENT_ID and bl.SCHOOL_YEAR = entwith.SCHOOL_YEAR) as grade&#xA;&#x9;,convert(char(8), bl.attendance_date, 112) as date_absent&#xA;&#x9;,bl.ATTENDANCE_PERIOD as period_absent&#xA;&#x9;,bl.ATTENDANCE_CODE as absence_reason&#xA;&#x9;,case when bl.attendance_code in ('e','u','oss') then 'N' else 'Y' end as excused_flag&#xA;&#x9;from&#xA;&#x9;&#x9;aus_att_bottomline bl join aus_att_period per&#xA;&#x9;&#x9;&#x9;on bl.building = per.building and bl.attendance_period = per.attendance_period and per.inc_in_att_view = 'Y'&#xA;&#x9;&#x9;&#x9;and bl.school_year = per.school_year --and bl.attendance_code in ('e','u','oss')&#xA;&#x9;&#x9;join aus_reg reg&#xA;&#x9;&#x9;&#x9;on reg.student_id = bl.student_id and reg.building = bl.building&#xA;&#x9;&#x9;join aus_period_days pd&#xA;&#x9;&#x9;&#x9;on pd.school_year = bl.school_year and pd.building = bl.building and pd.ada_period = bl.ATTENDANCE_PERIOD and datepart(dw,bl.attendance_date) = day_of_week&#xA;&#x9;where&#xA;&#x9;&#x9;bl.SCHOOL_YEAR &gt;= 2020&#xA;&#x9;&#x9;and per.inc_in_att_view = 'Y'&#xA;&#xA;&#x9;update ADA_Absence_reasons set grade = '0' + grade where len(grade) = 1&#xA;&#x9;&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons where ktx_district = 'aus' and academic_year &gt;= 2020&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons select * from ADA_Absence_reasons&#xA;&#xA;--sat&#xA;&#xA;delete from ADA_Absence_reasons&#xA;insert into ADA_Absence_reasons&#xA;select post.sch_yr as school_year&#xA;&#x9;,'SAT' as ktx_district&#xA;&#x9;,campus.campus_name as School_Name&#xA;&#x9;,post.campus_id as school_id&#xA;&#x9;,post.STU_ID as student_id&#xA;&#x9;,enroll.NAME_F as name_first&#xA;&#x9;,enroll.NAME_L as name_last&#xA;&#x9;,'SAT_'+post.campus_id + '_' + enroll.STU_ID as unique_concatenate&#xA;&#x9;,enroll.GRD_LVL as grade&#xA;&#x9;,post.ABS_DATE as date_absent&#xA;&#x9;,post.ABS_PER as period_absent&#xA;&#x9;,post.abs_type as absence_reason&#xA;&#x9;,case when reas.ada_abs = 1 then 'N' else 'Y' end as excused_flag&#xA;&#x9;from&#xA;&#x9;&#x9;sat_sr_att_post post&#xA;&#x9;&#x9;join sat_cr_att_opt ada&#xA;&#x9;&#x9;&#x9;on post.abs_per = ada.att_ada_post_per and post.campus_id = ada.campus_id and post.sch_yr = ada.sch_yr&#xA;&#x9;&#x9;join sat_sr_stu_enroll enroll&#xA;&#x9;&#x9;&#x9;on enroll.stu_id = post.stu_id and enroll.sch_yr = post.sch_yr  and enroll.campus_id = post.campus_id&#xA;&#x9;&#x9;join sat_st_att_post reas&#xA;&#x9;&#x9;&#x9;on reas.post_cd = post.abs_type  and reas.sch_yr = post.sch_yr&#xA;&#x9;&#x9;left outer join SAT_CR_DEMO campus on campus.campus_id = post.campus_id and campus.sch_yr = post.SCH_YR&#xA;&#x9;where&#xA;&#x9;&#x9;post.sch_yr &gt;= 2020&#xA;&#x9;&#x9;and post.ABS_DATE &gt;= enroll.DT_ENTRY&#xA;&#x9;&#x9;and (post.abs_date &lt; enroll.DT_WITHDRAW or enroll.DT_WITHDRAW = '')&#xA;&#x9;&#x9;and enroll.ATT_TRK = ada.track&#xA;&#xA;&#xA;&#x9;update ADA_Absence_reasons set grade = '0' + grade where len(grade) = 1&#xA;&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons where ktx_district = 'sat' and academic_year &gt;= 2020&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons select * from ADA_Absence_reasons&#xA;&#xA;--HOU&#xA;&#xA;delete from ADA_Absence_reasons&#xA;insert into ADA_Absence_reasons&#xA;select post.sch_yr as school_year&#xA;&#x9;,'HOU' as ktx_district&#xA;&#x9;,campus.campus_name as School_Name &#xA;&#x9;,post.campus_id as school_id&#xA;&#x9;,post.STU_ID as student_id&#xA;&#x9;,enroll.NAME_F as name_first&#xA;&#x9;,enroll.NAME_L as name_last&#xA;&#x9;,'HOU_'+post.campus_id + '_' + enroll.STU_ID as unique_concatenate&#xA;&#x9;,enroll.GRD_LVL as grade&#xA;&#x9;,post.ABS_DATE as date_absent&#xA;&#x9;,post.ABS_PER as period_absent&#xA;&#x9;,post.abs_type as absence_reason&#xA;&#x9;,case when reas.ada_abs = 1 then 'N' else 'Y' end as excused_flag&#xA;&#x9;from&#xA;&#x9;&#x9;hou_sr_att_post post&#xA;&#x9;&#x9;join hou_cr_att_opt ada&#xA;&#x9;&#x9;&#x9;on post.abs_per = ada.att_ada_post_per and post.campus_id = ada.campus_id and post.sch_yr = ada.sch_yr&#xA;&#x9;&#x9;join hou_sr_stu_enroll enroll&#xA;&#x9;&#x9;&#x9;on enroll.stu_id = post.stu_id and enroll.sch_yr = post.sch_yr  and enroll.campus_id = post.campus_id&#xA;&#x9;&#x9;join hou_st_att_post reas&#xA;&#x9;&#x9;&#x9;on reas.post_cd = post.abs_type  and reas.sch_yr = post.sch_yr&#xA;&#x9;&#x9;left outer join hou_CR_DEMO campus on campus.campus_id = post.campus_id and campus.sch_yr = post.SCH_YR&#xA;&#x9;where&#xA;&#x9;&#x9;post.sch_yr &gt;= 2020&#xA;&#x9;&#x9;and post.ABS_DATE &gt;= enroll.DT_ENTRY&#xA;&#x9;&#x9;and (post.abs_date &lt; enroll.DT_WITHDRAW or enroll.DT_WITHDRAW = '')&#xA;&#x9;&#x9;and enroll.ATT_TRK = ada.track&#xA;&#xA;&#xA;&#x9;update ADA_Absence_reasons set grade = '0' + grade where len(grade) = 1&#xA;&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons where ktx_district = 'HOU' and academic_year &gt;= 2020&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons select * from ADA_Absence_reasons&#xA;&#xA;--DFW&#xA;&#xA;delete from ADA_Absence_reasons&#xA;insert into ADA_Absence_reasons&#xA;select &#xA;&#x9; '20' + cast(atten.yearid-9 as varchar(2)) as school_year&#xA;&#x9;,'DFW' as ktx_district&#xA;&#x9;,(select [name] from dfw_schools where school_number = atten.schoolid) as School_Name &#xA;&#x9;,atten.SchoolID as school_id&#xA;&#x9;,student.student_number as student_id&#xA;&#x9;,student.first_name as name_first&#xA;&#x9;,student.last_name as name_last&#xA;&#x9;,'DFW_'+cast(atten.SchoolID as varchar(10)) + '_' + cast(student.Student_Number as varchar(10)) as unique_concatenate&#xA;&#x9;,case&#xA;&#x9;&#x9;when (select top 1 Grade_Level from DFW_ReEnrollments renr where renr.studentid = atten.studentid and atten.ATT_Date &gt;= entrydate and atten.att_date &lt; exitdate) is null then student.grade_level&#xA;&#x9;&#x9;else (select top 1 Grade_Level from DFW_ReEnrollments renr where renr.studentid = atten.studentid and atten.ATT_Date &gt;= entrydate and atten.att_date &lt; exitdate)  end as grade&#xA;&#x9;,convert(char(8),atten.att_date,112) as date_absent&#xA;&#x9;,left(cast(per.period_number as varchar(10)),2) as period_absent &#xA;&#x9;,code.att_code as absence_reason&#xA;&#x9;,case when code.calc_ada_yn = 1 then 'N' else 'Y' end as excused_flag&#xA;&#x9;from&#xA;&#x9;&#x9;DFW_Calendar_Day calday&#xA;&#x9;&#x9;join dfw_Bell_Sched_Items bell&#xA;&#x9;&#x9;&#x9;on calday.bell_schedule_id = bell.Bell_Sched_ID &#xA;&#x9;&#x9;join dfw_attendance atten&#xA;&#x9;&#x9;&#x9;on atten.periodid = bell.period_id and calday.schoolday = atten.att_date&#xA;&#x9;&#x9;join dfw_students student&#xA;&#x9;&#x9;&#x9;on atten.studentid = student.internalid&#xA;&#x9;&#x9;join dfw_attendance_code code&#xA;&#x9;&#x9;&#x9;on code.day_id = atten.att_codeid and code.schoolid = atten.schoolid and code.yearid = atten.YearID&#xA;&#x9;&#x9;join dfw_period per on atten.periodid = per.period_id and atten.YearID = per.year_id&#xA;&#x9;where&#xA;&#x9;&#x9;total_minutes = 0 and atten.yearid &gt; 28 and bell.ada_code = 1 and schoolday &lt; student.exitdate&#xA;&#xA;&#x9;&#x9;&#xA;&#x9;update ADA_Absence_reasons set grade ='KG' where grade = '00'&#xA;&#x9;update ADA_Absence_reasons set grade ='PK' where grade = '-1'&#xA;&#x9;update ADA_Absence_reasons set grade = '0' + grade where len(grade) = 1&#xA;&#xA;&#x9;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons where ktx_district = 'DFW' and academic_year &gt;= 2020&#xA;&#x9;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons select * from ADA_Absence_reasons&#xA;&#x9;&#xA;-- COU&#xA;&#xA;/*&#xA;delete from ADA_Absence_reasons&#xA;insert into ADA_Absence_reasons&#xA;&#x9;select &#xA;&#x9;&#x9;2019 as Academic_year,&#xA;&#x9;&#x9;'COU' as ktx_district,&#xA;&#x9;&#x9;'KIPP Courage' as School_Name,&#xA;&#x9;&#x9;'101920041' as school_id,&#xA;&#x9;&#x9;other_id as student_id,&#xA;&#x9;&#x9;Stu_First_Name as name_first,&#xA;&#x9;&#x9;Stu_Last_Name as name_last,&#xA;&#x9;&#x9;'COU_101920041_' + other_id as unique_concatenate,&#xA;&#x9;&#x9;(select top 1 student_grade from HOU_Courage_Enroll enr where enr.other_id = att.other_id)  as grade,&#xA;&#x9;&#x9;convert(varchar(8),absence_date,112) as date_absent,&#xA;&#x9;&#x9;absence_period as period_absent,&#xA;&#x9;&#x9;Abs_Reason_Code as absence_reason,&#xA;&#x9;&#x9;'N' as excused_flag&#xA;&#x9;from&#xA;&#x9;&#x9;hou_courage_att att&#xA;&#x9;where&#xA;&#x9;&#x9;abs_type_code not in ('T','X')&#xA;&#x9;&#xA;&#x9;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons where ktx_district = 'COU' and academic_year = 2019&#xA;&#x9;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ADA_Absence_reasons select * from ADA_Absence_reasons&#xA;&#xA;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;*/" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Attendance"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FFA8F5C6-7C8A-43A3-A53B-31D4B5190F0A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attendance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="delete from ada_attendance&#xA;&#x9;insert into ada_attendance select * from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'aus'&#xA;&#x9;--create temp excused table (count by school, day, grade)&#xA;&#x9;select count(*) as absent, convert(char(8), bl.attendance_date, 112) as absDate, case when bl.building &lt; 10 then '00' + cast(bl.building as char(1)) when bl.building &gt; 9 and bl.building &lt; 100 then&#xA;&#x9;&#x9;'0' + cast(bl.building as char(2)) else cast(bl.building as char(3)) end as bldg, grade&#xA;&#x9;&#x9;into #ausexcused from &#xA;&#x9;aus_att_bottomline bl join aus_att_period per on bl.building = per.building and bl.attendance_period = per.attendance_period and per.inc_in_att_view = 'Y'&#xA;&#x9;and bl.school_year = per.school_year and bl.attendance_code not in ('e','u','oss')&#xA;&#x9;join aus_reg reg on reg.student_id = bl.student_id and reg.building = bl.building&#xA;&#x9;join aus_period_days pd&#xA;&#x9;&#x9;&#x9;on pd.school_year = bl.school_year and pd.building = bl.building and pd.ada_period = bl.ATTENDANCE_PERIOD and datepart(dw,bl.attendance_date) = day_of_week&#xA;&#x9;&#xA;&#x9;group by convert(char(8), bl.attendance_date, 112), case when bl.building &lt; 10 then '00' + cast(bl.building as char(1)) when bl.building &gt;9 and bl.building &lt; 100 then&#xA;&#x9;&#x9;'0' + cast(bl.building as char(2)) else cast(bl.building as char(3)) end, grade order by convert(char(8), bl.attendance_date, 112)&#xA;&#x9;--update ada_attendance&#xA;&#x9;update ada_attendance set total_absent_excused = (select absent from #ausexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#x9;--select * from #ausexcused&#xA;&#x9;&#xA;&#x9;-- create tmep unexcused table&#xA;&#x9;select count(*) as absent, convert(char(8), bl.attendance_date, 112) as absDate, case when bl.building &lt; 10 then '00' + cast(bl.building as char(1)) when bl.building &gt; 9 and bl.building &lt; 100 then&#xA;&#x9;&#x9;'0' + cast(bl.building as char(2)) else cast(bl.building as char(3)) end as bldg, grade&#xA;&#x9;&#x9;into #ausunexused from &#xA;&#x9;aus_att_bottomline bl join aus_att_period per on bl.building = per.building and bl.attendance_period = per.attendance_period and per.inc_in_att_view = 'Y'&#xA;&#x9;and bl.school_year = per.school_year and bl.attendance_code in ('e','u','oss')&#xA;&#x9;join aus_reg reg on reg.student_id = bl.student_id and reg.building = bl.building&#xA;&#x9;join aus_period_days pd&#xA;&#x9;&#x9;&#x9;on pd.school_year = bl.school_year and pd.building = bl.building and pd.ada_period = bl.ATTENDANCE_PERIOD and datepart(dw,bl.attendance_date) = day_of_week&#xA;&#x9;&#xA;&#x9;group by convert(char(8), bl.attendance_date, 112), case when bl.building &lt; 10 then '00' + cast(bl.building as char(1)) when bl.building &gt;9 and bl.building &lt; 100 then&#xA;&#x9;&#x9;'0' + cast(bl.building as char(2)) else cast(bl.building as char(3)) end, grade order by convert(char(8), bl.attendance_date, 112)&#xA;&#x9;--update ada_attendance unexused&#xA;&#x9;update ada_attendance set total_absent_unexcused = (select absent from #ausunexused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;&#x9;&#x9;drop table #ausexcused&#xA;&#x9;&#x9;drop table #ausunexused&#xA;&#xA;&#x9;update ada_attendance set actual_enroll = (select count(*) from aus_reg_entry_with rew where rew.grade = ada_attendance.grade and rew.building = ada_attendance.school_id and &#xA;&#x9;&#x9;school_day &gt;= rew.entry_date and (school_day &lt; rew.withdrawal_date or rew.withdrawal_date is null) &#xA;&#x9;&#x9;and student_id not in (select student_id from aus_reg_programs where field_number = 4 and program_id = 146 and program_value = 0 and start_date &lt;= school_day and (end_date is null or end_date &gt;= school_day) )&#xA;&#x9;&#x9;)&#xA;&#xA;&#x9;update ada_attendance set total_absent_excused = 0 where total_absent_excused is null&#xA;&#x9;update ada_attendance set total_absent_unexcused = 0 where total_absent_unexcused is null&#xA;&#x9;update ada_attendance set total_present = actual_enroll - total_absent_excused - total_absent_unexcused&#xA;&#x9;update ada_attendance set percent_present&#x9;&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused-total_absent_excused as real)/cast(actual_enroll as real) end&#xA;&#x9;update ada_attendance set percent_present_ADA&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused as real)/cast(actual_enroll as real) end&#xA;&#xA;&#x9;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'aus'&#xA;&#x9;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance select * from ada_attendance where ktx_district = 'aus'&#xA;&#x9;&#x9;&#xA;&#x9;&#xA;&#xA;&#x9;--SAT&#xA;&#x9;&#xA;&#x9;delete from ada_attendance&#xA;&#x9;insert into ada_attendance select * from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'sat'&#xA;&#x9;--create temp excused table (count by school, day, grade)&#xA;&#x9;select count(*) as absent, abs_date as absDate, abs.campus_id as bldg, grd_lvl as grade&#xA;&#x9;&#x9;into #satexcused&#xA;&#x9;&#x9;from sat_sr_att_post abs join sat_cr_att_opt ada on abs.abs_per = ada.att_ada_post_per and abs.campus_id = ada.campus_id and abs.sch_yr = ada.sch_yr&#xA;&#x9;&#x9;join sat_sr_stu_enroll enroll on enroll.stu_id = abs.stu_id and enroll.sch_yr = abs.sch_yr  and enroll.ATT_TRK = ada.track&#xA;&#x9;&#x9;join sat_st_att_post post on post.post_cd = abs.abs_type  and post.sch_yr = abs.sch_yr&#xA;&#x9;&#x9;where abs.sch_yr = 2020 and post.ada_abs = 0&#xA;&#x9;&#x9;and enroll.dt_entry &lt; abs.abs_date and (enroll.DT_WITHDRAW = '' or enroll.DT_WITHDRAW is null or enroll.DT_WITHDRAW &gt;= abs_date)&#xA;&#x9;&#x9;group by abs_date, abs.campus_id, grd_lvl&#xA;&#x9;update ada_attendance set total_absent_excused = (select absent from #satexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;&#x9;&#x9;--create temp unexcused table (count by school, day, grade)&#xA;&#x9;select count(*) as absent, abs_date as absDate, abs.campus_id as bldg, grd_lvl as grade&#xA;&#x9;&#x9;into #satunexcused&#xA;&#x9;&#x9;from sat_sr_att_post abs join sat_cr_att_opt ada on abs.abs_per = ada.att_ada_post_per and abs.campus_id = ada.campus_id and abs.sch_yr = ada.sch_yr&#xA;&#x9;&#x9;join sat_sr_stu_enroll enroll on enroll.stu_id = abs.stu_id and enroll.sch_yr = abs.sch_yr  and enroll.ATT_TRK = ada.track&#xA;&#x9;&#x9;join sat_st_att_post post on post.post_cd = abs.abs_type  and post.sch_yr = abs.sch_yr&#xA;&#x9;&#x9;where abs.sch_yr = 2020 and post.ada_abs = 1&#xA;&#x9;&#x9;and enroll.dt_entry &lt; abs.abs_date and (enroll.DT_WITHDRAW = '' or enroll.DT_WITHDRAW is null or enroll.DT_WITHDRAW &gt;= abs_date)&#xA;&#x9;&#x9;group by abs_date, abs.campus_id, grd_lvl&#xA;&#x9;update ada_attendance set total_absent_unexcused = (select absent from #satunexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;&#x9;drop table #satexcused&#xA;&#x9;drop table #satunexcused&#xA;&#xA;&#x9;update ada_attendance set actual_enroll = (select count(*) from sat_sr_stu_enroll enroll where enroll.sch_yr = ada_attendance.academic_year and enroll.grd_lvl = ada_attendance.grade and enroll.campus_id = ada_attendance.school_id and &#xA;&#x9;&#x9;school_day &gt;= enroll.dt_entry and (school_day &lt; enroll.dt_withdraw or enroll.dt_withdraw is null or enroll.dt_withdraw = '' and enroll.status_cd not in ('5','6')) )&#xA;&#x9;&#x9;&#xA;&#x9;&#xA;&#x9;update ada_attendance set total_absent_excused = 0 where total_absent_excused is null&#xA;&#x9;update ada_attendance set total_absent_unexcused = 0 where total_absent_unexcused is null&#xA;&#x9;update ada_attendance set total_present = actual_enroll - total_absent_excused - total_absent_unexcused&#xA;&#x9;update ada_attendance set percent_present&#x9;&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused-total_absent_excused as real)/cast(actual_enroll as real) end&#xA;&#x9;update ada_attendance set percent_present_ADA&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused as real)/cast(actual_enroll as real) end&#xA;&#x9;delete from ADA_Attendance where ktx_district = 'sat' and academic_year = 2019 and school_day &gt; '20190531'&#xA;&#xA;&#x9;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'sat'&#xA;&#x9;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance select * from ada_attendance where ktx_district = 'sat'&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;--HOU&#xA;&#x9;&#xA;&#x9;delete from ada_attendance&#xA;&#x9;insert into ada_attendance select * from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'HOU'&#xA;&#x9;--create temp excused table (count by school, day, grade)&#xA;&#x9;select count(*) as absent, abs_date as absDate, abs.campus_id as bldg, grd_lvl as grade&#xA;&#x9;&#x9;into #houexcused&#xA;&#x9;&#x9;from hou_sr_att_post abs join hou_cr_att_opt ada on abs.abs_per = ada.att_ada_post_per and abs.campus_id = ada.campus_id and abs.sch_yr = ada.sch_yr&#xA;&#x9;&#x9;join hou_sr_stu_enroll enroll on enroll.stu_id = abs.stu_id and enroll.sch_yr = abs.sch_yr  and enroll.ATT_TRK = ada.track&#xA;&#x9;&#x9;join hou_st_att_post post on post.post_cd = abs.abs_type  and post.sch_yr = abs.sch_yr&#xA;&#x9;&#x9;where abs.sch_yr = 2020 and post.ada_abs = 0&#xA;&#x9;&#x9;and enroll.dt_entry &lt; abs.abs_date and (enroll.DT_WITHDRAW = '' or enroll.DT_WITHDRAW is null or enroll.DT_WITHDRAW &gt;= abs_date)&#xA;&#x9;&#x9;group by abs_date, abs.campus_id, grd_lvl&#xA;&#x9;update ada_attendance set total_absent_excused = (select absent from #houexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;&#x9;&#x9;--create temp unexcused table (count by school, day, grade)&#xA;&#x9;select count(*) as absent, abs_date as absDate, abs.campus_id as bldg, grd_lvl as grade&#xA;&#x9;&#x9;into #houunexcused&#xA;&#x9;&#x9;from hou_sr_att_post abs join hou_cr_att_opt ada on abs.abs_per = ada.att_ada_post_per and abs.campus_id = ada.campus_id and abs.sch_yr = ada.sch_yr&#xA;&#x9;&#x9;join hou_sr_stu_enroll enroll on enroll.stu_id = abs.stu_id and enroll.sch_yr = abs.sch_yr  and enroll.ATT_TRK = ada.track&#xA;&#x9;&#x9;join hou_st_att_post post on post.post_cd = abs.abs_type  and post.sch_yr = abs.sch_yr&#xA;&#x9;&#x9;where abs.sch_yr = 2020 and post.ada_abs = 1&#xA;&#x9;&#x9;and enroll.dt_entry &lt; abs.abs_date and (enroll.DT_WITHDRAW = '' or enroll.DT_WITHDRAW is null or enroll.DT_WITHDRAW &gt;= abs_date)&#xA;&#x9;&#x9;group by abs_date, abs.campus_id, grd_lvl&#xA;&#x9;update ada_attendance set total_absent_unexcused = (select absent from #houunexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;&#x9;drop table #houexcused&#xA;&#x9;drop table #houunexcused&#xA;&#xA;&#x9;update ada_attendance set actual_enroll = (select count(*) from hou_sr_stu_enroll enroll where enroll.sch_yr = ada_attendance.academic_year and enroll.grd_lvl = ada_attendance.grade and enroll.campus_id = ada_attendance.school_id and &#xA;&#x9;&#x9;school_day &gt;= enroll.dt_entry and (school_day &lt; enroll.dt_withdraw or enroll.dt_withdraw is null or enroll.dt_withdraw = '' and enroll.status_cd not in ('5','6')) )&#xA;&#x9;&#x9;&#xA;&#x9;update ada_attendance set total_absent_excused = 0 where total_absent_excused is null&#xA;&#x9;update ada_attendance set total_absent_unexcused = 0 where total_absent_unexcused is null&#xA;&#x9;update ada_attendance set total_present = actual_enroll - total_absent_excused - total_absent_unexcused&#xA;&#x9;update ada_attendance set percent_present&#x9;&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused-total_absent_excused as real)/cast(actual_enroll as real) end&#xA;&#x9;update ada_attendance set percent_present_ADA&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused as real)/cast(actual_enroll as real) end&#xA;&#xA;&#x9;delete from ADA_Attendance where ktx_district = 'hou' and academic_year = 2020 and school_day &gt; '20200604'&#xA;&#xA;&#x9;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'hou'&#xA;&#x9;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance select * from ada_attendance where ktx_district = 'hou'&#xA;&#xA;&#x9;&#xA;&#x9;--DFW&#xA;&#x9;&#xA;&#x9;delete from ada_attendance&#xA;&#x9;insert into ada_attendance select * from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'DFW'&#xA;&#x9;--create temp excused table (count by school, day, grade)&#xA;&#x9;select count(*) as absent, convert(char(8),atten.att_date,112) as absDate, atten.schoolid as bldg, grade_level as grade&#xA;&#x9;into #dfwexcused&#xA;&#x9;&#x9;from DFW_Calendar_Day calday join dfw_Bell_Sched_Items bell&#xA;&#x9;&#x9;&#x9;on calday.bell_schedule_id = bell.Bell_Sched_ID &#xA;&#x9;&#x9;join dfw_attendance atten&#xA;&#x9;&#x9;&#x9;on atten.periodid = bell.period_id and calday.schoolday = atten.att_date&#xA;&#x9;&#x9;join dfw_students student&#xA;&#x9;&#x9;&#x9;on atten.studentid = student.internalid&#xA;&#x9;&#x9;join dfw_attendance_code code&#xA;&#x9;&#x9;&#x9;on code.day_id = atten.att_codeid and code.schoolid = atten.schoolid and code.yearid = 29 -- and code.calc_ada_yn = 0&#xA;&#x9;&#x9;where schoolday &gt;= '7/1/2019' and ada_code = 1 and atten.yearid = 29 and student.exitdate &gt; schoolday-- and total_minutes = 0&#xA;&#x9;&#x9;and att_code &lt;&gt; '' and att_code &lt;&gt; 't' --added&#xA;&#x9;&#x9;and Presence_Status_CD = 'present'&#xA;&#x9;&#x9;group by convert(char(8),atten.att_date,112), atten.schoolid, grade_level&#xA;&#x9;&#x9;order by convert(char(8),atten.att_date,112), atten.schoolid&#xA;&#x9;update #dfwexcused set grade = '0' + grade where len(ltrim(rtrim(grade))) = 1&#xA;&#x9;update #dfwexcused set grade = 'KG' where grade = '00'&#xA;&#x9;update ada_attendance set total_absent_excused = (select absent from #dfwexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;&#x9;select count(*) as absent, convert(char(8),atten.att_date,112)  as absDate, atten.schoolid as bldg, grade_level as grade&#xA;&#x9;into #dfwunexcused&#xA;&#x9;&#x9;from DFW_Calendar_Day calday join dfw_Bell_Sched_Items bell&#xA;&#x9;&#x9;&#x9;on calday.bell_schedule_id = bell.Bell_Sched_ID &#xA;&#x9;&#x9;join dfw_attendance atten&#xA;&#x9;&#x9;&#x9;on atten.periodid = bell.period_id and calday.schoolday = atten.att_date&#xA;&#x9;&#x9;join dfw_students student on atten.studentid = student.internalid&#xA;&#x9;&#x9;join dfw_attendance_code code on code.day_id = atten.att_codeid and code.schoolid = atten.schoolid and code.yearid = 29 -- and code.calc_ada_yn = 1&#xA;&#x9;&#x9;where schoolday &gt;= '7/1/2019' and ada_code = 1 and atten.yearid = 29 and student.exitdate &gt; schoolday -- and total_minutes = 0&#xA;&#x9;&#x9;and att_code &lt;&gt; '' and att_code &lt;&gt; 't' --added&#xA;&#x9;&#x9;and Presence_Status_CD = 'absent'&#xA;&#x9;&#x9;group by convert(char(8),atten.att_date,112), atten.schoolid, grade_level&#xA;&#x9;&#x9;order by convert(char(8),atten.att_date,112), atten.schoolid&#xA;&#x9;update #dfwunexcused set grade = '0' + grade where len(ltrim(rtrim(grade))) = 1&#xA;&#x9;update #dfwunexcused set grade = 'KG' where grade = '00'&#xA;&#x9;update ada_attendance set total_absent_unexcused = (select absent from #dfwunexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;&#x9;drop table #dfwexcused&#xA;&#x9;drop table #dfwunexcused&#xA;&#xA;&#x9;select case when len(grade_level) = 1 then '0' + grade_level else grade_level end as grade, schoolid, cast(entrydate as smalldatetime) as entdate, cast(exitdate as smalldatetime) as exidate, internalID&#xA;&#x9;&#x9;into #students from dfw_students where cast(entrydate as smalldatetime) &gt;= '7/15/2019'&#xA;&#x9;insert into #students select case when grade_level &lt; 10 then '0' + cast(grade_level as char(1)) else cast(grade_level as char(2)) end as grade, schoolid, cast(entrydate as smalldatetime) as entdate, cast(exitdate as smalldatetime) as exidate, studentid&#xA;&#x9;&#x9;from dfw_reenrollments where cast(entrydate as smalldatetime) &gt;= '7/15/2016'&#xA;&#x9;update #students set grade = 'KG' where grade = '00'&#xA;&#x9;update ada_attendance set actual_enroll = (select count(*) from #students stu where stu.grade = ADA_Attendance.grade and stu.schoolid = ADA_Attendance.School_ID&#xA;&#x9;&#x9;and cast(school_day as smalldatetime) &gt;= entdate and (cast(school_day as smalldatetime) &lt; exidate or exidate is null or exidate = '')) &#xA;&#x9;drop table #students&#xA;&#x9;&#x9;&#xA;&#x9;update ada_attendance set total_absent_excused = 0 where total_absent_excused is null&#xA;&#x9;update ada_attendance set total_absent_unexcused = 0 where total_absent_unexcused is null&#xA;&#x9;update ada_attendance set total_present = actual_enroll - total_absent_excused - total_absent_unexcused&#xA;&#x9;update ada_attendance set percent_present&#x9;&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused-total_absent_excused as real)/cast(actual_enroll as real) end&#xA;&#x9;update ada_attendance set percent_present_ADA&#x9;= case when actual_enroll = 0 then 0 else cast(actual_enroll-total_absent_unexcused as real)/cast(actual_enroll as real) end&#xA;&#x9;update ada_attendance set school_name = (select [name] from dfw_schools where school_id = school_number)&#xA;&#xA;&#x9;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'dfw'&#xA;&#x9;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance select * from ada_attendance where ktx_district = 'dfw'&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;--COU&#xA;&#x9;&#xA;&#x9;delete from ada_attendance&#xA;&#x9;insert into ada_attendance select * from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'COU'&#xA;&#x9;--create temp excused table (count by school, day, grade)&#xA;&#x9;--not doing for Courage - assuming all are unexcused at this point&#xA;&#x9;&#xA;--&#x9;select count(*) as absent, abs_date as absDate, abs.campus_id as bldg, grd_lvl as grade&#xA;--&#x9;&#x9;into #houexcused&#xA;--&#x9;&#x9;from hou_sr_att_post abs join hou_cr_att_opt ada on abs.abs_per = ada.att_ada_post_per and abs.campus_id = ada.campus_id and abs.sch_yr = ada.sch_yr&#xA;--&#x9;&#x9;join hou_sr_stu_enroll enroll on enroll.stu_id = abs.stu_id and enroll.sch_yr = abs.sch_yr  and enroll.ATT_TRK = ada.track&#xA;--&#x9;&#x9;join hou_st_att_post post on post.post_cd = abs.abs_type  and post.sch_yr = abs.sch_yr&#xA;--&#x9;&#x9;where abs.sch_yr = 2019 and post.ada_abs = 0&#xA;--&#x9;&#x9;and enroll.dt_entry &lt; abs.abs_date and (enroll.DT_WITHDRAW = '' or enroll.DT_WITHDRAW is null or enroll.DT_WITHDRAW &gt;= abs_date)&#xA;--&#x9;&#x9;group by abs_date, abs.campus_id, grd_lvl&#xA;--&#x9;update ada_attendance set total_absent_excused = (select absent from #houexcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#x9;&#xA;&#x9;update ada_attendance set total_absent_excused = 0&#xA;&#xA;&#x9;&#x9;--create temp unexcused table (count by school, day, grade)&#xA;&#x9;select count(*) as absent, convert(char(8),absence_date,112) as absDate, '101920041' as bldg, student_grade as grade&#xA;&#x9;&#x9;into #coueunxcused&#xA;&#x9;&#x9;from hou_courage_att att join HOU_Courage_Enroll enr on att.other_id = enr.other_id&#xA;&#x9;&#x9;where att.abs_type_code not in ('T','X')&#xA;&#x9;&#x9;group by convert(char(8),absence_date,112) ,  student_grade order by convert(char(8),absence_date,112),student_grade&#xA;&#xA;&#x9;&#x9;&#xA;&#x9;update ada_attendance set total_absent_unexcused = (select absent from #coueunxcused ausun where ausun.bldg = school_id and absdate = school_day and ausun.grade = ada_attendance.grade)&#xA;&#xA;--&#x9;drop table #couexcused --not used&#xA;&#x9;drop table #coueunxcused&#xA;&#xA;&#x9;update ada_attendance set actual_enroll = (select count(*) from HOU_Courage_Enroll enroll where enroll.student_grade = ada_attendance.grade and  &#xA;&#x9;&#x9;school_day &gt;= convert(varchar(8),cast(enroll.entry_date as smalldatetime),112) and (school_day &lt; convert(varchar(8),cast(enroll.withdrawal_date as smalldatetime),112) &#xA;&#x9;&#x9;or enroll.withdrawal_date is null or enroll.withdrawal_date = '') )&#xA;&#x9;&#x9;&#xA;&#x9;update ada_attendance set total_absent_excused = 0 where total_absent_excused is null&#xA;&#x9;update ada_attendance set total_absent_unexcused = 0 where total_absent_unexcused is null&#xA;&#x9;update ada_attendance set total_present = actual_enroll - total_absent_excused - total_absent_unexcused&#xA;&#x9;update ada_attendance set percent_present&#x9;&#x9;= cast(actual_enroll-total_absent_unexcused-total_absent_unexcused as real)/cast(actual_enroll as real)&#xA;&#x9;update ada_attendance set percent_present_ADA&#x9;= cast(actual_enroll-total_absent_unexcused as real)/cast(actual_enroll as real)&#xA;&#xA;&#x9;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance where ktx_district = 'cou'&#xA;&#x9;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance select * from ada_attendance where ktx_district = 'cou'&#xA;&#xA;&#x9;update [KTX-SQL-DW].[KTX_Analytics].[dbo].ada_attendance set percent_present = null, percent_present_ada = null&#xA;&#x9;&#x9;where school_day &gt;= convert(varchar(8), getdate(), 112)&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Discipline"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{56AA448A-C2E9-492F-AE38-DCE23568774F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Discipline"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:SqlStatementSource="--AUS&#xA;&#xA;delete from discipline &#xA;insert into discipline&#xA;select&#xA;&#x9;reg.first_name&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_First, --varchar(50)&#xA;&#x9;reg.last_name&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_Last, --varchar(50)&#xA;&#x9;reg.student_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id, --varchar(20)&#xA;&#x9;left(rtrim(ltrim(ruser.field_value)),10)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id_state, --varchar(32)&#xA;&#x9;inc.incident_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_ID, --int&#xA;&#x9;inc.incident_code&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Code, --char(5)&#xA;&#x9;dic1.description&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Description, --varchar(255)&#xA;&#x9;offcode.offense_code&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offence_Code, --char(5)&#xA;&#x9;dic2.description&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offense_Description, --varchar(255)&#xA;&#x9;offact.ACTION_CODE&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Action_Code, --char(5)&#xA;&#x9;offactcode.DESCRIPTION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Action_Description, --varchar(255)&#xA;&#x9;convert(char(8), inc.INCIDENT_DATE, 112)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Date, --char(8)&#xA;&#x9;inc.incident_time&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Time, --char(5)&#xA;&#x9;convert(char(8), offact.date_determined,112)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Disciple_Decision_Date, --char(8)&#xA;&#x9;convert(char(8), offact.START_DATE, 112)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Start_Date, --char(8),&#xA;&#x9;convert(char(8), offact.end_date,112)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_End_Date, --char(8),&#xA;&#x9;offact.REASON_CODE&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Code, --char(5)&#xA;&#x9;offactcode.DESCRIPTION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Description, --varchar(255)&#xA;&#x9;offact.SCHD_DURATION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Assigned, --real&#xA;&#x9;offact.ACTUAL_DURATION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Actual, --real&#xA;&#x9;'AUS'&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as KTX_District, --char(3)&#xA;&#x9;replace((select state_code_equiv from aus_reg_building rb where rb.building = inc.building),'227820','')&#x9;&#x9;as School_ID, --varchar(20)&#xA;&#x9;(select name from aus_reg_building rb where rb.building = inc.building)&#x9;&#x9;&#x9;&#x9;&#x9;as school_name,&#xA;&#x9;inc.LOCATION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Code, --char(5)&#xA;&#x9;locdesc.DESCRIPTION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Description, --barchar(255)&#xA;&#x9;inc.SCHOOL_YEAR&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Academic_Year, --int&#xA;&#x9;rew.grade&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Grade, --char(2)&#xA;&#x9;left(ltrim(rtrim((select program_value from aus_reg_programs rpr where&#xA;&#x9;&#x9;rpr.student_id = reg.student_id&#x9;and program_id = 146 and FIELD_NUMBER = 5&#xA;&#x9;&#x9;and start_date &lt;= inc.incident_date and (end_date &gt;= inc.incident_date&#xA;&#x9;&#x9;or END_DATE is null)))),1)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as LEP, --char(1)&#xA;&#x9;left(ltrim(rtrim((select top 1 program_value from aus_reg_programs rpr where&#xA;&#x9;&#x9;rpr.student_id = reg.student_id and program_id = 148 and FIELD_NUMBER = 4&#xA;&#x9;&#x9;and start_date &lt;= inc.incident_date and (end_date &gt;= inc.incident_date&#xA;&#x9;&#x9;or END_DATE is null) order by change_date_time desc))),1)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as SPED, --char(1)&#xA;&#x9;regper.Section_504_plan&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as [504], --char(1)&#xA;&#x9;&#x9;left(ltrim(rtrim((select program_value from aus_reg_programs rpr where&#xA;&#x9;&#x9;rpr.student_id = reg.student_id&#x9;and program_id = 146 and FIELD_NUMBER = 117&#xA;&#x9;&#x9;and start_date &lt;= inc.incident_date and (end_date &gt;= inc.incident_date&#xA;&#x9;&#x9;or END_DATE is null)))),1)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as RTI, --char(1)&#xA;&#x9;reg.gender&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Gender, --varchar(2)&#xA;&#x9;(select description from aus_regtb_ethnicity re where re.code = regper.ethnic_code)&#x9;&#x9;as Ethnicity, --varchar(255)&#xA;&#x9;regper.hispanic&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Hispanic_Latino --char(1)&#xA;&#xA;from&#xA;&#x9;AUS_Disc_Incident inc&#xA;&#x9;join aus_disc_offender offndr on inc.incident_id = offndr.incident_id&#xA;&#x9;join aus_disc_off_code offcode on inc.incident_id = offcode.incident_id and offndr.offender = offcode.offender&#xA;&#x9;join aus_reg reg on offndr.person_id = reg.STUDENT_ID&#xA;&#x9;left join aus_reg_user &#x9;ruser on reg.student_id = ruser.student_id and ruser.screen_number = 10165 and ruser.field_number = 1&#xA;&#x9;join aus_disc_incident_code dic1 on inc.incident_code = dic1.code&#xA;&#x9;join aus_disc_incident_code dic2 on offcode.offense_code = dic2.code&#xA;&#x9;left join AUS_Disc_Off_Action offact on offact.incident_id = inc.incident_id and offndr.offender = offact.offender&#xA;&#x9;left join AUS_DiscTB_Off_Action offactcode on offactcode.code = offact.action_code&#xA;&#x9;left join AUS_DiscTB_Location locdesc on locdesc.code = inc.location&#xA;&#x9;left join AUS_REG_entry_with rew on rew.STUDENT_ID = offndr.PERSON_ID and rew.entry_date &lt;= inc.INCIDENT_DATE and (rew.withdrawal_date is null or rew.WITHDRAWAL_DATE &gt;= inc.INCIDENT_DATE)&#xA;&#x9;left join AUS_REG_Personal regper on offndr.person_id = regper.STUDENT_ID&#xA;&#xA;&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[discipline] where ktx_district = 'aus'&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].discipline select * from discipline&#xA;&#xA;--SAT&#xA;&#xA;delete from discipline &#xA;insert into discipline&#xA;select&#xA;&#x9;(select top 1 name_f from SAT_SR_STU_ENROLL reg&#xA;&#x9;&#x9;where reg.stu_id =disc.stu_id and reg.SCH_YR = disc.SCH_YR)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_First, --varchar(50)&#xA;&#x9;(select top 1 name_l from SAT_SR_STU_ENROLL reg&#xA;&#x9;&#x9;where reg.stu_id =disc.stu_id and reg.SCH_YR = disc.SCH_YR)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_Last, --varchar(50)&#xA;&#x9;disc.stu_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id, --varchar(20)&#xA;&#x9;demo.unique_stu_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id_state, --varchar(32)&#xA;&#x9;disc.incident_num&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_ID, --int&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Code, --char(5)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Description, --varchar(255)&#xA;&#x9;ofens.ofens_cd&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offence_Code, --char(5)&#xA;&#x9;ocode.ofens_desc&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offense_Description, --varchar(255)&#xA;&#x9;actn.actn_cd&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Action_Code, --char(5)&#xA;&#x9;apln.discpln_actn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Action_Description, --varchar(255)&#xA;&#x9;disc.dt_ofens&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Date, --char(8)&#xA;&#x9;left(disc.ofens_time,2)+':'+substring(disc.ofens_time,3,2) &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Time, --char(5)&#xA;&#x9;actn.DATE_DISPLNRY_ACTION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Disciple_Decision_Date, --char(8)&#xA;&#x9;actn.actn_from_dt&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Start_Date, --char(8),&#xA;&#x9;actn.actn_to_dt&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_End_Date, --char(8),&#xA;&#x9;actn.length_diff_rsn_cd&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Code, --char(5)&#xA;&#x9;difrsn.discpln_len_diff_rsn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Description, --varchar(255)&#xA;&#x9;actn.offcl_length_discpln_assgn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Assigned, --real&#xA;&#x9;actn.act_length_discpln_assgn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Actual, --real&#xA;&#x9;'SAT'&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as KTX_District, --char(3)&#xA;&#x9;disc.campus_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as School_ID, --varchar(20)&#xA;&#x9;(select campus_name from sat_cr_demo dem where dem.campus_id = disc.campus_id and dem.sch_yr = disc.sch_yr)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as School_Name, --varchar(255)&#xA;&#x9;disc.inc_loc&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Code, --char(5)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Description, --barchar(255)&#xA;&#x9;disc.sch_yr&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Academic_Year, --int&#xA;&#x9;enrl.GRD_LVL&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Grade, --char(2)&#xA;&#x9;bilesl.lep_ind&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as LEP, --char(1)&#xA;&#x9;case when sped.PRI_HANDI_IND is not null then 'Y' else null end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as SPED, --char(1)&#xA;&#x9;case when pother1.OTHER_SPEC_PGM = '504' then 'Y' else 'N' end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as [504], --char(1)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as RTI, --char(1)&#xA;&#x9;demo.sex&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Gender, --varchar(2)&#xA;&#x9;&#x9;case&#xA;&#x9;&#x9;when demo.race_amer_indian = 1 then 'American Indian or Alaskan Native'&#xA;&#x9;&#x9;when demo.race_asian = 1 then 'Asian'&#xA;&#x9;&#x9;when demo.race_black = 1 then 'Black or African American'&#xA;&#x9;&#x9;when demo.race_pacific_isl = 1 then 'Native Hawaiian or Other Pacific Islander'&#xA;&#x9;&#x9;when demo.race_white = 1 then 'White'&#xA;&#x9;&#x9;end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Ethnicity, --varchar(255)&#xA;&#x9;case&#xA;&#x9;&#x9;when demo.ETHN_HISPANIC = 1 then 'Y' else 'N' end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Hispanic_Latino --char(1)&#xA;from&#xA;&#x9;sat_sr_Discpln disc&#xA;&#x9;left join sat_sr_discpln_ofens ofens on disc.sch_yr = ofens.sch_yr and disc.stu_id = ofens.stu_id and disc.ofens_stamp&#xA;&#x9;&#x9;= ofens.ofens_stamp&#xA;&#x9;left outer join SAT_SR_STU_DEMO demo on disc.stu_id = demo.stu_id and disc.SCH_YR = demo.SCH_YR&#xA;&#x9;left join SAT_ST_OFENS_CD ocode on ocode.sch_yr = ofens.SCH_YR and ofens.ofens_cd = ocode.ofens_cd&#xA;&#x9;left join SAT_SR_DISCPLN_ACTN actn on actn.stu_id = disc.stu_id and actn.ofens_stamp = disc.OFENS_STAMP&#xA;&#x9;left join SAT_ET_C164_DISCPLN_ACTNS apln on apln.sch_yr = actn.sch_yr and apln.discpln_actn_cd = actn.actn_cd&#xA;&#x9;left join SAT_ET_C166_DISCPLN_LEN_DIFF_RSN difrsn on difrsn.sch_yr = actn.sch_yr and difrsn.discpln_len_diff_rsn_cd = actn.length_diff_rsn_cd&#xA;&#x9;left outer join sat_SR_SPEC_PGM_OTHER pother1 on pother1.stu_id = disc.stu_id and pother1.sch_yr = disc.sch_yr and pother1.OTHER_SPEC_PGM = '504' and pother1.DT_ENTRY_RECIP = '' and pother1.wr_campus = disc.campus_id&#xA;&#x9;left outer join sat_SR_SPEC_PGM_BIL_ESL bilesl on bilesl.stu_id = disc.stu_id and bilesl.sch_yr = disc.sch_yr and bilesl.dt_bil_esl_wd = '' and disc.campus_id = bilesl.campus_id&#xA;&#x9;left outer join sat_SR_SPEC_PGM_SPEC_ED sped on sped.stu_id = disc.stu_id and sped.sch_yr = disc.sch_yr and sped.dt_wd = '' and sped.campus_id = disc.campus_id&#xA;&#x9;left outer join sat_sr_stu_enroll enrl on enrl.stu_id = disc.stu_id and enrl.sch_yr = disc.sch_yr and disc.dt_ofens &gt; enrl.dt_entry&#xA;&#x9;&#x9;and (disc.dt_ofens &lt; enrl.dt_withdraw or enrl.dt_withdraw = '') and enrl.campus_id = disc.campus_id&#xA;&#x9;&#xA;order by&#xA;&#x9;disc.incident_num, disc.dt_ofens, disc.stu_id&#xA;&#xA;&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[discipline] where ktx_district = 'sat'&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].discipline select * from discipline&#xA;&#xA;--HOU&#xA;delete from discipline &#xA;insert into discipline&#xA;select&#xA;&#x9;(select top 1 name_f from hou_SR_STU_ENROLL reg&#xA;&#x9;&#x9;where reg.stu_id =disc.stu_id and reg.SCH_YR = disc.SCH_YR)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_First, --varchar(50)&#xA;&#x9;(select top 1 name_l from hou_SR_STU_ENROLL reg&#xA;&#x9;&#x9;where reg.stu_id =disc.stu_id and reg.SCH_YR = disc.SCH_YR)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_Last, --varchar(50)&#xA;&#x9;disc.stu_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id, --varchar(20)&#xA;&#x9;demo.unique_stu_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id_state, --varchar(32)&#xA;&#x9;disc.incident_num&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_ID, --int&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Code, --char(5)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Description, --varchar(255)&#xA;&#x9;ofens.ofens_cd&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offence_Code, --char(5)&#xA;&#x9;ocode.ofens_desc&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offense_Description, --varchar(255)&#xA;&#x9;actn.actn_cd&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Action_Code, --char(5)&#xA;&#x9;apln.discpln_actn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Action_Description, --varchar(255)&#xA;&#x9;disc.dt_ofens&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Date, --char(8)&#xA;&#x9;left(disc.ofens_time,2)+':'+substring(disc.ofens_time,3,2) &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Time, --char(5)&#xA;&#x9;actn.DATE_DISPLNRY_ACTION&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Disciple_Decision_Date, --char(8)&#xA;&#x9;actn.actn_from_dt&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Start_Date, --char(8),&#xA;&#x9;actn.actn_to_dt&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_End_Date, --char(8),&#xA;&#x9;actn.length_diff_rsn_cd&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Code, --char(5)&#xA;&#x9;difrsn.discpln_len_diff_rsn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Description, --varchar(255)&#xA;&#x9;actn.offcl_length_discpln_assgn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Assigned, --real&#xA;&#x9;actn.act_length_discpln_assgn&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Actual, --real&#xA;&#x9;'HOU'&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as KTX_District, --char(3)&#xA;&#x9;disc.campus_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as School_ID, --varchar(20)&#xA;&#x9;(select campus_name from hou_cr_demo dem where dem.campus_id = disc.campus_id and dem.sch_yr = disc.sch_yr)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as School_Name, --varchar(255)&#xA;&#x9;disc.inc_loc&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Code, --char(5)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Description, --barchar(255)&#xA;&#x9;disc.sch_yr&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Academic_Year, --int&#xA;&#x9;enrl.GRD_LVL&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Grade, --char(2)&#xA;&#x9;bilesl.lep_ind&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as LEP, --char(1)&#xA;&#x9;case when sped.PRI_HANDI_IND is not null then 'Y' else null end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as SPED, --char(1)&#xA;&#x9;case when pother1.OTHER_SPEC_PGM = '504' then 'Y' else 'N' end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as [504], --char(1)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as RTI, --char(1)&#xA;&#x9;demo.sex&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Gender, --varchar(2)&#xA;&#x9;&#x9;case&#xA;&#x9;&#x9;when demo.race_amer_indian = 1 then 'American Indian or Alaskan Native'&#xA;&#x9;&#x9;when demo.race_asian = 1 then 'Asian'&#xA;&#x9;&#x9;when demo.race_black = 1 then 'Black or African American'&#xA;&#x9;&#x9;when demo.race_pacific_isl = 1 then 'Native Hawaiian or Other Pacific Islander'&#xA;&#x9;&#x9;when demo.race_white = 1 then 'White'&#xA;&#x9;&#x9;end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Ethnicity, --varchar(255)&#xA;&#x9;case&#xA;&#x9;&#x9;when demo.ETHN_HISPANIC = 1 then 'Y' else 'N' end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Hispanic_Latino --char(1)&#xA;from&#xA;&#x9;hou_sr_Discpln disc&#xA;&#x9;left join hou_sr_discpln_ofens ofens on disc.sch_yr = ofens.sch_yr and disc.stu_id = ofens.stu_id and disc.ofens_stamp&#xA;&#x9;&#x9;= ofens.ofens_stamp&#xA;&#x9;left outer join hou_SR_STU_DEMO demo on disc.stu_id = demo.stu_id and disc.SCH_YR = demo.SCH_YR&#xA;&#x9;left join hou_ST_OFENS_CD ocode on ocode.sch_yr = ofens.SCH_YR and ofens.ofens_cd = ocode.ofens_cd&#xA;&#x9;left join hou_SR_DISCPLN_ACTN actn on actn.stu_id = disc.stu_id and actn.ofens_stamp = disc.OFENS_STAMP&#xA;&#x9;left join hou_ET_C164_DISCPLN_ACTNS apln on apln.sch_yr = actn.sch_yr and apln.discpln_actn_cd = actn.actn_cd&#xA;&#x9;left join hou_ET_C166_DISCPLN_LEN_DIFF_RSN difrsn on difrsn.sch_yr = actn.sch_yr and difrsn.discpln_len_diff_rsn_cd = actn.length_diff_rsn_cd&#xA;&#x9;left outer join hou_SR_SPEC_PGM_OTHER pother1 on pother1.stu_id = disc.stu_id and pother1.sch_yr = disc.sch_yr and pother1.OTHER_SPEC_PGM = '504' and pother1.DT_ENTRY_RECIP = '' and pother1.wr_campus = disc.campus_id&#xA;&#x9;left outer join hou_SR_SPEC_PGM_BIL_ESL bilesl on bilesl.stu_id = disc.stu_id and bilesl.sch_yr = disc.sch_yr and bilesl.dt_bil_esl_wd = '' and disc.campus_id = bilesl.campus_id&#xA;&#x9;left outer join hou_SR_SPEC_PGM_SPEC_ED sped on sped.stu_id = disc.stu_id and sped.sch_yr = disc.sch_yr and sped.dt_wd = '' and sped.campus_id = disc.campus_id&#xA;&#x9;left outer join hou_sr_stu_enroll enrl on enrl.stu_id = disc.stu_id and enrl.sch_yr = disc.sch_yr and disc.dt_ofens &gt; enrl.dt_entry&#xA;&#x9;&#x9;and (disc.dt_ofens &lt; enrl.dt_withdraw or enrl.dt_withdraw = '') and enrl.campus_id = disc.campus_id&#xA;order by&#xA;&#x9;disc.incident_num, disc.dt_ofens&#xA;&#xA;&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[discipline] where ktx_district = 'hou'&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].discipline select * from discipline&#xA;&#xA;&#xA;&#xA;delete from discipline &#xA;insert into discipline&#xA;select&#xA;&#x9;stu.First_Name&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_First, --varchar(50)&#xA;&#x9;stu.last_name&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Name_Last, --varchar(50)&#xA;&#x9;stu.student_number&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id, --varchar(20)&#xA;&#x9;stu.state_studentnumber&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Student_id_state, --varchar(32)&#xA;&#x9;v.incident_id&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_ID, --int&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Code, --char(5)&#xA;&#x9;v.incident_title&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Incident_Description, --varchar(255)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offence_Code, --char(5)&#xA;&#x9;left(v.incident_description,255)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Offense_Description, --varchar(255)&#xA;&#x9;case when v.incident_title like '%oss%' then 'OSS'&#xA;&#x9;&#x9;when v.incident_title like '%iss%' then 'ISS' else '' end&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Action_Code, --char(5)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;As Action_Description, --varchar(255)&#xA;&#x9;convert(char(8), cast(v.incident_date as smalldatetime), 112)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Date, --char(8)&#xA;&#x9;left(v.incident_time,5) &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Time, --char(5)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Disciple_Decision_Date, --char(8)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Start_Date, --char(8),&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_End_Date, --char(8),&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Code, --char(5)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Exception_Description, --varchar(255)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Assigned, --real&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Suspension_Duration_Actual, --real&#xA;&#x9;'DFW'&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as KTX_District, --char(3)&#xA;&#x9;v.incident_school_number&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as School_ID, --varchar(20)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as School_Name, --varchar(255)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Code, --char(5)&#xA;&#x9;v.incident_location_code&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Offense_Location_Description, --barchar(255)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Academic_Year, --int&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Grade, --char(2)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as LEP, --char(1)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as SPED, --char(1)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as [504], --char(1)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as RTI, --char(1)&#xA;&#x9;stu.gender&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Gender, --varchar(2)&#xA;&#x9;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Ethnicity, --varchar(255)&#xA;&#x9;''&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as Hispanic_Latino --char(1)&#xA;&#x9;&#xA;&#x9;&#x9;&#xA;from v_dfw_incident v&#xA;&#x9;join DFW_Students stu on v.student_number = stu.Student_Number&#xA;&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[discipline] where ktx_district = 'dfw'&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].discipline select * from discipline&#xA;&#xA;UPDATE [KTX-SQL-DW].[KTX_Analytics].[dbo].Discipline&#xA;SET Academic_Year = 2020&#xA;WHERE CONVERT(date, Offense_Date) &gt;= CONVERT(date, '2019-08-01')&#xA;AND CONVERT(date, Offense_Date) &lt; CONVERT(date, '2020-06-20')&#xA;&#xA;UPDATE [KTX-SQL-DW].[KTX_Analytics].[dbo].Discipline&#xA;SET Academic_Year = 2019&#xA;WHERE CONVERT(date, Offense_Date) &gt;= CONVERT(date, '2018-08-01')&#xA;AND CONVERT(date, Offense_Date) &lt; CONVERT(date, '2019-06-20')&#xA;&#xA;UPDATE [KTX-SQL-DW].[KTX_Analytics].[dbo].Discipline&#xA;SET Academic_Year = 2018&#xA;WHERE CONVERT(date, Offense_Date) &gt;= CONVERT(date, '2017-08-01')&#xA;AND CONVERT(date, Offense_Date) &lt; CONVERT(date, '2018-06-20')&#xA;&#xA;UPDATE [KTX-SQL-DW].[KTX_Analytics].[dbo].Discipline&#xA;SET Academic_Year = 2017&#xA;WHERE CONVERT(date, Offense_Date) &gt;= CONVERT(date, '2016-08-01')&#xA;AND CONVERT(date, Offense_Date) &lt; CONVERT(date, '2017-06-20')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Empty DW Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{11F4C2C4-9768-4287-A579-C56FF32D422D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Empty DW Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[Consolidated_Enrollment]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6CFCBE88-322E-452A-B6D9-EC38A470DE9A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:SqlStatementSource="delete from student_ids&#xA;insert into student_ids select * from [ktx-sql-dw].ktx_analytics.dbo.student_ids" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GradePeriod Grades"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{92B851F6-C1EE-48B7-A0E3-5DF24F9462E4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GradePeriod Grades"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;--aus&#xA;delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod where ktx_district = 'aus' and academic_year &gt;= 2020&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod&#xA; select&#xA;&#x9;mks.student_id,&#xA;&#x9;'AUS',&#xA;&#x9;m.school_year as academic_year,&#xA;&#x9;case&#xA;&#x9;&#x9;when mark_type = 'fnl' then 'Y1'&#xA;&#x9;&#x9;when mark_type = 'qtr' then marking_period&#xA;&#x9;&#x9;end as gradeperiod,&#xA;&#x9;&#x9;raw_mark_value as gradenumeric,&#xA;&#x9;&#x9;mark_value as gradechar,&#xA;&#x9;&#x9;left(description, 40) as course_name,&#xA;&#x9;&#x9;left(m.course, 11) as course_number,&#xA;&#x9;&#x9;mks.change_date_time as date_scored,&#xA;&#x9;&#x9;(select top 1 tx.SERVICE_ID_E0724 from [V-KIP-SQL02A.K12HOSTING.KIP].[KIPeSchool_Live].[dbo].[TX_COURSE] tx where &#xA;&#x9;&#x9;tx.course = m.course and m.school_year = tx.school_year and m.building = tx.building)&#xA;from [V-KIP-SQL02A.K12HOSTING.KIP].[KIPeSchool_Live].[dbo].MR_STU_MARKS  mks join&#xA;&#x9;[V-KIP-SQL02A.K12HOSTING.KIP].KIPeSchool_Live.dbo.Schd_Ms m on mks.section_key = m.section_key&#xA; where&#xA;&#x9;mark_type in ('fnl','qtr')&#xA;&#x9;and m.school_year &gt;= 2020&#xA;  &#xA; --dfw&#xA; delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod where ktx_district = 'dfw' and academic_year &gt;= 2020&#xA; insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod&#xA; select&#xA;&#x9;s.student_number,&#xA;&#x9;'DFW',&#xA;&#x9;2000 + left(cast(termid as varchar(10)),2) -9,&#xA;&#x9;left(storecode,3),&#xA;&#x9;[percent],&#xA;&#x9;left(grade,3),&#xA;&#x9;left(course_name,40),&#xA;&#x9;left(course_number,11),&#xA;&#x9;datestored,&#xA;&#x9;(select top 1 [&quot;COURSESCOREFIELDS alt_course_number&quot;] from dfw_courses c where c.[&quot;COURSES Course_Number&quot;] = course_number)&#xA; from dfw_storedgrades sg join dfw_students s on sg.studentid = s.internalid&#xA; where (storecode like 'q%' or storecode like 'y%' )  and 2000 + left(cast(termid as varchar(10)),2) -9 = 2020&#xA; order by s.student_number, 2000 + left(cast(termid as varchar(10)),2) -9, course_number, storecode&#xA;&#xA;&#xA;--sat&#xA; delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod where ktx_district = 'sat' and academic_year &gt;= 2020&#xA; insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod&#xA;&#xA;select g.stu_id, 'SAT', g.sch_yr, 'Q1'as grade_period, case when isnumeric(grd_cyc1) = 1 then cast(grd_cyc1 as real) else '' end, grd_cyc1, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from sat_sr_crs_grd g join SAT_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 1 and g.sch_yr &gt;= '2020'&#xA;&#x9;and dt_wd = '' and grd_cyc1 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'SAT', g.sch_yr, 'Q2'as grade_period, case when isnumeric(grd_cyc2) = 1 then cast(grd_cyc2 as real) else '' end, grd_cyc2, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from sat_sr_crs_grd g join SAT_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 1 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_cyc2 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'SAT', g.sch_yr, 'Q3'as grade_period, case when isnumeric(grd_cyc1) = 1 then cast(grd_cyc1 as real) else '' end, grd_cyc1, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from sat_sr_crs_grd g join SAT_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 2 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_cyc1 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'SAT', g.sch_yr, 'Q4'as grade_period, case when isnumeric(grd_cyc2) = 1 then cast(grd_cyc2 as real) else '' end, grd_cyc2, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from sat_sr_crs_grd g join SAT_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 2 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_cyc2 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'SAT', g.sch_yr, 'Y1'as grade_period, case when isnumeric(grd_final) = 1 then cast(grd_final as real) else '' end, grd_final, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from sat_sr_crs_grd g join SAT_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 2 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_final &lt;&gt; ''&#xA;&#xA;--hou&#xA; delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod where ktx_district = 'hou' and academic_year &gt;= 2020&#xA; insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].Grades_GradePeriod&#xA;&#xA;&#xA;select g.stu_id, 'HOU', g.sch_yr, 'Q1'as grade_period, case when isnumeric(grd_cyc1) = 1 then cast(grd_cyc1 as real) else '' end, grd_cyc1, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from hou_sr_crs_grd g join hou_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 1 and g.sch_yr &gt;= '2020'&#xA;&#x9;and dt_wd = '' and grd_cyc1 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'HOU', g.sch_yr, 'Q2'as grade_period, case when isnumeric(grd_cyc2) = 1 then cast(grd_cyc2 as real) else '' end, grd_cyc2, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from HOU_sr_crs_grd g join HOU_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 1 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_cyc2 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'HOU', g.sch_yr, 'Q3'as grade_period, case when isnumeric(grd_cyc1) = 1 then cast(grd_cyc1 as real) else '' end, grd_cyc1, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from HOU_sr_crs_grd g join HOU_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 2 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_cyc1 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'HOU', g.sch_yr, 'Q4'as grade_period, case when isnumeric(grd_cyc2) = 1 then cast(grd_cyc2 as real) else '' end, grd_cyc2, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from HOU_sr_crs_grd g join HOU_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 2 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_cyc2 &lt;&gt; ''&#xA;&#xA;&#x9;union all&#xA;select g.stu_id, 'HOU', g.sch_yr, 'Y1'as grade_period, case when isnumeric(grd_final) = 1 then cast(grd_final as real) else '' end, grd_final, c.title, g.crs_nbr, '',c.svc_id&#xA;&#x9;from HOU_sr_crs_grd g join HOU_DR_CRS_OFFERED_CYR c on g.sch_yr = c.sch_yr&#xA;&#x9;and g.crs_nbr = c.crs_nbr where crs_sem_enroll = 2 and g.sch_yr &gt;= '2020' and dt_wd = '' and grd_final &lt;&gt; ''&#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\HistoricalByStudent"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EF9CAA27-DD96-4A65-B025-1375DA13671E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="HistoricalByStudent"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:SqlStatementSource="&#xA;--Aus&#xA;delete from ada_historical_by_student&#xA;insert into ada_historical_by_student&#xA;&#x9;select distinct rew.school_year, 'AUS', (select name from aus_reg_building rb where rb.building = rew.building), &#xA;&#x9;case when rew.building &lt; 10 then '00' + cast(rew.building as char(1)) when rew.building &gt; 9 and rew.building &lt; 100 then '0' + cast(rew.building as char(2)) else cast(rew.building as char(3)) end,&#xA;&#x9;rew.student_id, r.first_name, r.last_name, '' as uniqueconcat,&#xA;&#x9;null as total_absences, null as total_absences_excused, null as total_days_present, 0 as total_days_enrolled, null as ytd_percent_present&#xA;&#x9;from &#xA;&#x9;&#x9;aus_reg r&#xA;&#x9;&#x9;left join aus_reg_entry_with rew&#xA;&#x9;&#x9;&#x9;on r.student_id = rew.student_id&#xA;&#x9;where rew.school_year &gt; 2016&#xA;&#xA;select distinct stu.student_id, rew.school_year, rew.building, rew.entry_date, rew.withdrawal_date, withdrawal_code, 0 as entday, 0 as exitday, 0 as days_enrolled&#xA;&#x9;into #DaysEnrolled from ada_historical_by_student stu join aus_reg_entry_with rew on stu.student_id = rew.student_id and stu.academic_year = rew.school_year&#xA;&#x9;where entry_date &lt;&gt; withdrawal_date or withdrawal_date is null&#xA;&#x9;order by stu.student_id, rew.school_year&#xA;&#xA;&#x9;update #daysenrolled set entday = (select min(day_in_membership) from aus_reg_cal_days cal where cal.building = #daysenrolled.building and cal.school_year = #daysenrolled.school_year and cal.cal_date &gt;= entry_date and day_in_membership &gt; 0)&#xA;&#x9;update #daysenrolled set exitday = (select max(day_in_membership) from aus_reg_cal_days cal where cal.building = #daysenrolled.building and cal.school_year = #daysenrolled.school_year and cal.cal_date &lt;= coalesce(withdrawal_date,getdate()))&#xA;&#x9;update #daysenrolled set days_enrolled = exitday-entday&#xA;&#x9;update #daysenrolled set days_enrolled = days_enrolled + 1 where withdrawal_code in ('01','ye')&#xA;&#x9;select student_id, school_year, building, sum(days_enrolled) as totaldaysenrolled into #totaldaysenrolled from #daysenrolled group by student_id, school_year, building&#xA;&#x9;drop table #daysenrolled&#xA;&#xA;&#x9;update ada_historical_by_student set Total_Days_Enrolled = (select totaldaysenrolled from #totaldaysenrolled&#xA;&#x9;&#x9;where #totaldaysenrolled.student_id = ada_historical_by_student.student_id and #totaldaysenrolled.building = ada_historical_by_student.school_id&#xA;&#x9;&#x9;and #totaldaysenrolled.school_year = ada_historical_by_student.Academic_Year)&#xA;&#x9;drop table #totaldaysenrolled&#xA;&#xA;--SAT&#xA;&#x9;select&#xA;&#x9;&#x9;sch_yr as academic_year, 'SAT' as ktx_district,&#xA;&#x9;&#x9;(select campus_name from sat_cr_demo where campus_id = sat_sr_stu_enroll.campus_id and sch_yr = sat_sr_stu_enroll.sch_yr) as school_name,&#xA;&#x9;&#x9;campus_id as school_id,&#x9;stu_id, name_f, name_l, 'SAT_' + campus_id + '_' + stu_id as unique_concatenate, dt_entry, dt_withdraw,&#xA;&#x9;&#x9;withdraw_cd, 0 as entday, 0 as exitday, 0 as days_enrolled, att_trk as trk&#xA;&#x9;&#x9;into #daysenrolledsat&#xA;&#x9;&#x9;from sat_sr_stu_enroll&#xA;&#x9;&#x9;where sch_yr &gt; 2016 and dt_entry &lt;&gt; dt_withdraw and status_cd not in (4,5,6)&#xA;&#xA;&#x9;update #daysenrolledsat set dt_withdraw = ad.end_date&#xA;&#x9;&#x9;from #daysenrolledsat des join academic_years ad on des.ktx_district = ad.ktx_district and des.academic_year = cast(ad.academic_year as char(4))&#xA;&#x9;&#x9;where dt_withdraw = ''&#xA;&#xA;&#x9;update #daysenrolledsat set days_enrolled = (select count(*) from SAT_CR_ATT_CAL cal&#xA;&#x9;&#x9;where cal.sch_yr = academic_year and cal.campus_id = #daysenrolledsat.school_id and track = trk and cal.day_date &gt;= dt_entry&#xA;&#x9;&#x9;and cal.day_date &lt; case when dt_withdraw &gt; convert(char(8),getdate(),112) then convert(char(8),getdate(),112) else dt_withdraw end and&#xA;&#x9;&#x9;cal.MEMBERSHIP_CODE in ('0','1','4','7'))&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;insert into ada_historical_by_student select academic_year, ktx_district, school_name, school_id, stu_id, name_f, name_l, unique_concatenate, 0 as totabs, 0 as totabsex, 0 as totdaypre, sum(days_enrolled) as totaldays, 0 as ytdper from #daysenrolledsat&#xA;&#x9;&#x9;group by academic_year, ktx_district, school_name, school_id, stu_id, name_f, name_l, unique_concatenate&#xA;&#x9;&#x9;order by stu_id&#xA;&#xA;&#x9;&#x9;drop table #daysenrolledsat&#xA;&#x9;&#x9;&#xA;--HOU&#xA;&#xA;&#x9;select&#xA;&#x9;&#x9;sch_yr as academic_year, 'HOU' as ktx_district,&#xA;&#x9;&#x9;(select campus_name from hou_cr_demo where campus_id = hou_sr_stu_enroll.campus_id and sch_yr = hou_sr_stu_enroll.sch_yr) as school_name,&#xA;&#x9;&#x9;campus_id as school_id,&#x9;stu_id, name_f, name_l, 'HOU_' + campus_id + '_' + stu_id as unique_concatenate, dt_entry, dt_withdraw,&#xA;&#x9;&#x9;withdraw_cd, 0 as entday, 0 as exitday, 0 as days_enrolled, att_trk as trk&#xA;&#x9;&#x9;into #daysenrolledhou&#xA;&#x9;&#x9;from HOU_sr_stu_enroll&#xA;&#x9;&#x9;where sch_yr &gt; 2016 and dt_entry &lt;&gt; dt_withdraw and status_cd not in (4,5,6)&#xA;&#xA;&#x9;update #daysenrolledhou set dt_withdraw = ad.end_date&#xA;&#x9;&#x9;from #daysenrolledhou des join academic_years ad on des.ktx_district = ad.ktx_district and des.academic_year = cast(ad.academic_year as char(4))&#xA;&#x9;&#x9;where dt_withdraw = ''&#xA;&#xA;&#x9;update #daysenrolledhou set days_enrolled = (select count(*) from HOU_CR_ATT_CAL cal&#xA;&#x9;&#x9;where cal.sch_yr = academic_year and cal.campus_id = #daysenrolledhou.school_id and track = trk and cal.day_date &gt;= dt_entry&#xA;&#x9;&#x9;and cal.day_date &lt; case when dt_withdraw &gt; convert(char(8),getdate(),112) then convert(char(8),getdate(),112) else dt_withdraw end and&#xA;&#x9;&#x9;cal.MEMBERSHIP_CODE in ('0','1','4','7'))&#xA;&#x9;&#xA;&#x9;insert into ada_historical_by_student select academic_year, ktx_district, school_name, school_id, stu_id, name_f, name_l, unique_concatenate, 0 as totabs, 0 as totabsex, 0 as totdaypre, sum(days_enrolled) as totaldays, 0 as ytdper from #daysenrolledhou&#xA;&#x9;&#x9;group by academic_year, ktx_district, school_name, school_id, stu_id, name_f, name_l, unique_concatenate&#xA;&#x9;&#x9;order by stu_id&#xA;&#xA;&#x9;&#x9;drop table #daysenrolledhou&#xA;&#xA;--dfw&#xA;&#x9;select case when cast(Entrydate as smalldatetime) &gt;= '8/1/2016' and cast(Entrydate as smalldatetime) &lt; '8/1/2017' then 2017&#xA;&#x9;&#x9;&#x9;when cast(Entrydate as smalldatetime) &gt;= '8/1/2017' and cast(Entrydate as smalldatetime) &lt; '8/1/2018' then 2018&#xA;&#x9;&#x9;&#x9;when cast(entrydate as smalldatetime) &gt;= '8/1/2018' and cast(Entrydate as smalldatetime) &lt; '8/1/2019' then 2019&#xA;&#x9;&#x9;&#x9;when cast(entrydate as smalldatetime) &gt;= '8/1/2019' and cast(Entrydate as smalldatetime) &lt; '8/1/2020' then 2020 end as academic_year,&#xA;&#x9;&#x9;'DFW' as ktx_district, (select [name] from dfw_schools where school_number = dfw_students.schoolid) as school_name, schoolid as school_id, student_number as student_id,&#xA;&#x9;&#x9;first_name as name_first, last_name as name_last, 'DFW_'+ cast(schoolid as varchar(10)) + '_' + cast(student_number as varchar(10)) as unique_concatenate,&#xA;&#x9;&#x9;0 as total_absences, 0 as total_absences_excused, 0 as total_days_present, 0 as total_days_enrolled, 0.0 as ytd_percent_present,&#xA;&#x9;&#x9;cast(entrydate as smalldatetime) as dt_entry, cast(exitdate as smalldatetime) as dt_withdraw&#xA;&#x9;&#x9;into #daysenrolleddfw from dfw_students where cast(Entrydate as smalldatetime) &gt;= '8/1/2016' and entrydate &lt;&gt; exitdate&#xA;&#x9;insert into #daysenrolleddfw select case&#xA;&#x9;&#x9;&#x9;when cast(ren.Entrydate as smalldatetime) &gt;= '8/1/2016' and cast(ren.Entrydate as smalldatetime) &lt; '8/1/2017' then 2017&#xA;&#x9;&#x9;&#x9;when cast(ren.Entrydate as smalldatetime) &gt;= '8/1/2017' and cast(ren.Entrydate as smalldatetime) &lt; '8/1/2018' then 2018&#xA;&#x9;&#x9;&#x9;when cast(ren.entrydate as smalldatetime) &gt;= '8/1/2018' and cast(ren.Entrydate as smalldatetime) &lt; '8/1/2019' then 2019&#xA;&#x9;&#x9;&#x9;when cast(ren.entrydate as smalldatetime) &gt;= '8/1/2019' and cast(ren.Entrydate as smalldatetime) &lt; '8/1/2020' then 2020 end as academic_year,&#xA;&#x9;&#x9;&#x9;'DFW' as ktx_district, (select [name] from dfw_schools where school_number = ren.schoolid) as school_name, ren.schoolid as school_id, student_number as student_id,&#xA;&#x9;&#x9;&#x9;first_name as name_first, last_name as name_last, 'DFW_'+ cast(ren.schoolid as varchar(10)) + '_' + cast(student_number as varchar(10)) as unique_concatenate,&#xA;&#x9;&#x9;&#x9;0 as total_absences, 0 as total_absences_excused, 0 as total_days_present, 0 as total_days_enrolled, 0.0 as ytd_percent_present,&#xA;&#x9;&#x9;&#x9;cast(ren.entrydate as smalldatetime) as dt_entry, cast(ren.exitdate as smalldatetime) as dt_withdraw&#xA;&#x9;&#x9;&#x9;from DFW_ReEnrollments ren join dfw_students stu on ren.studentid = stu.internalid&#xA;&#x9;&#x9;&#x9;where cast(ren.entrydate as smalldatetime) &gt;= '8/1/2016' and ren.entrydate &lt;&gt; ren.exitdate&#xA;&#x9;&#x9;--select * from #daysenrolleddfw order by student_id&#xA;&#x9;&#x9;--select * from ADA_historical_by_student&#xA;&#xA;&#x9;&#x9;update #daysenrolleddfw set total_days_enrolled = &#xA;&#x9;&#x9;&#x9;(select count(*) from DFW_Calendar_Day d where school_id = d.schoolid and schoolday &gt;= dt_entry&#xA;&#x9;&#x9;&#x9;and schoolday &lt; case when dt_withdraw &lt; getdate() then dt_withdraw else getdate() end and insession = 1)&#xA;&#x9;&#x9;insert into ADA_historical_by_student&#xA;&#x9;&#x9;&#x9;select academic_year, ktx_district, school_name, school_id, student_id, name_first, name_last, unique_concatenate,&#xA;&#x9;&#x9;&#x9;&#x9;total_absences, total_absences_excused, total_days_present, total_days_enrolled, ytd_percent_present  from #daysenrolleddfw&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;drop table #daysenrolleddfw&#xA;&#xA;--COU&#xA;insert into ada_historical_by_student&#xA;&#x9;select 2019 as academic_year, 'COU' as KTX_District, 'KIPP Courage', '101920041', other_id as student_id, stu_first_name as name_first, stu_last_name as name_last,&#xA;&#x9;&#x9;'COU_101920041_'+other_id as unique_concatenate, 0, 0, 0, &#xA;&#x9;&#x9;(select max(membership_day) from Hou_Courage_Cal_SY19 cal where schooldate &lt; case when withdrawal_date &lt;&gt; '' then withdrawal_date else getdate() end) -&#xA;&#x9;&#x9;(select min(membership_day) from Hou_Courage_Cal_SY19 cal where schooldate &gt;= Entry_Date) , 0&#xA;&#x9;from HOU_Courage_Enroll enr&#xA;&#x9;order by other_id&#xA;&#xA;&#xA;--post cleanup, common to all regions&#xA;&#x9;delete from ADA_historical_by_student where Total_Days_Enrolled is null or total_days_enrolled = 0&#xA;&#x9;update ADA_historical_by_student set Unique_Concatenate = ktx_district + '_' + school_id + '_' + Student_id where ktx_district = 'aus'&#xA;&#x9;update ADA_historical_by_student set total_absences_excused = &#xA;&#x9;&#x9;(select count(*) from [ktx-sql-dw].[ktx_analytics].dbo.ada_absence_reasons reas&#xA;&#x9;&#x9;&#x9;where reas.academic_year = ADA_historical_by_student.academic_year and reas.ktx_district = ADA_historical_by_student.ktx_district&#xA;&#x9;&#x9;&#x9;and reas.student_id = ADA_historical_by_student.student_id and excused_flag = 'Y' and reas.school_id = ADA_historical_by_student.school_id)&#xA;&#x9;update ADA_historical_by_student set total_absences = &#xA;&#x9;&#x9;(select count(*) from [ktx-sql-dw].[ktx_analytics].dbo.ada_absence_reasons reas&#xA;&#x9;&#x9;&#x9;where reas.academic_year = ADA_historical_by_student.academic_year and reas.ktx_district = ADA_historical_by_student.ktx_district&#xA;&#x9;&#x9;&#x9;and reas.student_id = ADA_historical_by_student.student_id and excused_flag = 'N' and reas.school_id = ADA_historical_by_student.school_id)&#xA;&#x9;update ADA_historical_by_student set total_days_present = Total_Days_Enrolled-Total_Absences&#xA;&#x9;update ADA_historical_by_student set YTD_Percent_Present = cast(total_days_present as real)/cast(total_days_enrolled as real)&#xA;&#x9;--select * from ada_historical_by_student where total_days_present = 0&#xA;&#x9;delete from [ktx-sql-dw].[ktx_analytics].dbo.ada_historical_by_student&#xA;&#x9;insert into [ktx-sql-dw].[ktx_analytics].dbo.ada_historical_by_student select * from ADA_historical_by_student" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate from AUS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BDC2CDB3-F81A-42F8-BEA0-B5B5EBD2C25B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate from AUS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="insert into [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment&#xA;select&#xA;&#x9;r.last_name as&#x9;&#x9;&#x9;&#x9;&#x9;Name_Last, -- varchar(50)&#xA;&#x9;r.first_name as&#x9;&#x9;&#x9;&#x9;&#x9;Name_First, -- varchar(50)&#xA;&#x9;r.student_id as&#x9;&#x9;&#x9;&#x9;&#x9;Student_ID_Local,  -- varchar(10)&#xA;&#x9;left(rtrim(ltrim(ruser.field_value)),10) as &#x9;&#x9;&#x9;student_id_state,&#xA;&#x9;case when contp.street_number is null then '' when contp.street_number = '' then '' else contp.street_number + ' ' end&#xA;&#x9;&#x9;+ case when contp.street_prefix is null then '' when contp.street_prefix = '' then '' else contp.street_prefix + ' ' end&#xA;&#x9;&#x9;+ contp.street_name&#xA;&#x9;&#x9;+ case when contp.street_suffix is null then '' when contp.street_suffix = '' then '' else ' ' + contp.street_suffix end&#xA;&#x9;&#x9;+ case when contp.street_type is null then '' when contp.street_type = '' then '' else ' ' + contp.street_type end as&#x9;Address_Line1, --varchar(265)&#xA;&#x9;case when contp.complex is null then '' when contp.complex = '' then '' else contp.complex + ' ' end&#xA;&#x9;&#x9;+ case when contp.APARTMENT is null then '' when contp.APARTMENT = '' then '' else contp.apartment end as&#x9;Address_Line2, -- varchar(255)&#xA;&#x9;contp.city as&#x9;&#x9;&#x9;&#x9;&#x9;Address_City, -- varchar(255)&#xA;&#x9;contp.state as&#x9;&#x9;&#x9;&#x9;&#x9;Address_State, -- char(2)&#xA;&#x9;contp.zip as&#x9;&#x9;&#x9;&#x9;&#x9;Address_ZipCode, -- varchar(10)&#xA;&#x9;'' as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Phone_Primary, -- varchar(10)&#xA;&#x9;rp.hispanic as&#x9;&#x9;&#x9;&#x9;&#x9;Hispanic_Latino, -- char(1),&#xA;&#x9;(select description from aus_regtb_ethnicity re where re.code = rp.ethnic_code)as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Ethnicity, -- varchar(20)&#xA;&#x9;rp.birth_country as&#x9;&#x9;&#x9;&#x9;&#x9;Country_of_Birth, -- varchar(25)&#xA;&#x9;(select description from aus_regtb_language rl where rl.code = r.native_language) as&#x9;&#x9;&#x9;&#x9;&#x9;Language_Primary, -- varchar(25)&#xA;&#x9;(select description from aus_regtb_language rl where rl.code = r.language) as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Language_Home, -- varchar(25)&#xA;&#x9;r.gender as&#x9;&#x9;&#x9;&#x9;&#x9;Gender, -- varchar(2)&#xA;&#x9;convert(char(8),r.birthdate,112) as&#x9;&#x9;&#x9;Birthdate, -- char(8)&#xA;&#x9;(select right(rtrim(state_code_equiv),3) from aus_reg_building rb where rb.building = rew.building) as&#x9;&#x9;&#x9;&#x9;School_ID, -- Varchar(20),&#xA;&#x9;(select name from aus_reg_building rb where rb.building = rew.building) as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;School_Name, -- Varchar(20),&#x9;&#xA;&#x9;r.grade as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Grade, --  char(2)&#xA;&#x9;r.homeroom_primary as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Homeroom, -- char(5)&#xA;&#x9;r.current_status as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;[Status], -- char(1)&#xA;&#x9;case when progHomeless.program_value &gt; 0 then 'Y' else 'N' end as&#x9;&#x9;Homeless,-- char(1)&#xA;&#x9;rp.at_risk as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;At_Risk, -- char(1)&#xA;&#x9;case&#xA;&#x9;&#x9;when left(ltrim(rtrim((select program_value from aus_reg_programs rpr where rpr.student_id = r.student_id and program_id = 145 and FIELD_NUMBER = 1 and END_DATE is null))),1) = '0' then 'N' else 'Y' end as&#x9;&#x9;ED, -- char(1),&#xA;&#x9;left(ltrim(rtrim((select top 1 program_value from aus_reg_programs rpr where rpr.student_id = r.student_id and program_id = 148 and FIELD_NUMBER = 4 and END_DATE is null order by change_date_time desc))),1) as&#x9;&#x9;SPED, -- char(1),&#xA;&#x9;left(ltrim(rtrim((select program_value from aus_reg_programs rpr where rpr.student_id = r.student_id and program_id = 146 and FIELD_NUMBER = 5 and END_DATE is null))),1) as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;LEP, -- char(1),&#xA;&#x9;rp.Section_504_plan as&#x9;&#x9;[504], -- char(1),&#xA;&#x9;case&#xA;&#x9;&#x9;when left(ltrim(rtrim((select program_value from aus_reg_programs rpr where rpr.student_id = r.student_id and program_id = 146 and FIELD_NUMBER = 33 and END_DATE is null))),1) = '1' then 'Y' else 'N' end as&#x9;&#x9;Dyslexia, -- char(1), &#xA;&#x9;convert(char(8),rew.entry_date,112) as&#x9;&#x9;Date_Enrolled, -- char(8)&#xA;&#x9;case when convert(char(8),rew.WITHDRAWAL_DATE,112) is not null then  convert(char(8),rew.WITHDRAWAL_DATE,112) else '' end as&#x9;&#x9;Date_Withdrawn, -- char(8)&#xA;&#x9;rew.withdrawal_code as&#x9;&#x9;Withdrawal_Reason, -- varchar(10)&#xA;&#x9;'AUS' as KTX_District,&#xA;&#x9;case&#xA;&#x9;&#x9;when ((select max(cast(day_in_membership as real)) from aus_reg_cal_days where cal_date &gt;= (getdate() - 14) and cal_date &lt; getdate() and building = rew.building) - cal.day_in_membership + 1) = 0 then 0&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;(((select max(cast(day_in_membership as real)) from aus_reg_cal_days where cal_date &gt;= (getdate() - 14) and cal_date &lt; getdate() and building = rew.building) - cal.day_in_membership + 1) -&#xA;&#x9;&#x9;&#x9;&#x9;coalesce(abse.days_absent,0)) / &#xA;&#x9;&#x9;&#x9;&#x9;((select max(cast(day_in_membership as real)) from aus_reg_cal_days where cal_date &gt;= (getdate() - 14) and cal_date &lt; getdate() and building = rew.building) - cal.day_in_membership + 1) end as Attendance_Present,&#xA;&#x9;'' as ktx_cohort,&#xA;&#x9;'' as kf_cohort,&#xA;&#x9;'' as Date_District_Entry,&#xA;&#x9;left(ltrim(rtrim((select program_value from aus_reg_programs rpr where&#xA;&#x9;&#x9;rpr.student_id = r.student_id&#x9;and program_id = 146 and FIELD_NUMBER = 117&#xA;&#x9;&#x9;and END_DATE is null))),1)&#x9;,&#xA;&#x9;2020&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;as RTI&#xA;&#x9;&#x9;&#xA;from&#xA;&#x9;aus_reg r&#xA;&#x9;left join aus_reg_personal &#x9;&#x9;rp on r.student_id = rp.student_id&#xA;&#x9;left join aus_reg_entry_with &#x9;&#x9;rew on r.student_id = rew.student_id&#xA;&#x9;left join aus_reg_user ruser on r.student_id = ruser.student_id and ruser.screen_number = 10165 and ruser.field_number = 1&#xA;&#x9;left join AUS_reg_cal_days cal on cal.cal_date = rew.entry_date and cal.school_year = rew.school_year and cal.building = rew.building&#xA;&#x9;left join AUS_Days_Absent abse on abse.school_year = rew.school_year and abse.student_id = r.student_id&#xA;&#x9;left join aus_reg_stu_contact stucontP on r.student_id = stucontP.student_id and stucontP.contact_type = 'P'&#xA;&#x9;left join aus_reg_contact contP on stucontP.contact_id = contP.contact_id&#xA;&#x9;left join AUS_REG_Programs progHomeless on progHomeless.student_id = r.student_id and proghomeless.PROGRAM_ID = 147 and proghomeless.field_number = 10&#xA;&#x9;&#x9;and progHomeless.END_DATE is null&#xA;where&#xA;&#x9;rew.school_year = 2020&#xA;&#x9;&#xA;&#x9;&#xA;&#xA;delete from [ktx-sql-dw].[ktx_analytics].dbo.student_ids where ktx_district = 'aus'&#xA;insert into [ktx-sql-dw].[ktx_analytics].dbo.student_ids&#xA;select distinct&#xA;&#x9;r.last_name as &#x9;&#x9;&#x9;name_last,&#xA;&#x9;r.first_name as &#x9;&#x9;&#x9;name_first,&#xA;&#x9;r.student_id as &#x9;&#x9;&#x9;student_id,&#xA;&#x9;left(rtrim(ltrim(ruser.field_value)),10) as &#x9;student_id_state,&#xA;&#x9;rp.ssn as &#x9;&#x9;&#x9;&#x9;ssn,&#xA;&#x9;'AUS' as &#x9;&#x9;&#x9;&#x9;ktx_district,&#xA;&#x9;(select top 1 convert(char(8),rew2.entry_date,112) from AUS_REG_entry_with rew2 where rew2.STUDENT_ID = r.STUDENT_ID order by rew2.ENTRY_DATE)&#xA;from&#xA;&#x9;aus_reg &#x9;&#x9;&#x9;r&#xA;&#x9;join AUS_REG_Personal &#x9;rp on r.student_id = rp.student_id&#xA;&#x9;left join aus_reg_user &#x9;ruser on r.student_id = ruser.student_id and ruser.screen_number = 10165 and ruser.field_number = 1&#xA;&#x9;left join aus_reg_entry_with &#x9;rew on r.student_id = rew.student_id&#xA;where&#xA;&#x9;rew.entry_date &gt;= '8/1/2015'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate from DFW"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5C7561CF-E961-4A8B-97BD-99E5D9AD06EE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate from DFW"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="--delete from [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment where ktx_district = 'dfw'&#xA;insert into [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment&#xA;select&#xA;&#x9;last_name as name_last,&#xA;&#x9;first_name as name_first,&#xA;&#x9;student_number as student_id,&#xA;&#x9;State_StudentNumber as student_id_state,&#xA;&#x9;street as address_line1,&#xA;&#x9;'' as address_line2,&#xA;&#x9;City as address_city,&#xA;&#x9;State as address_state,&#xA;&#x9;Zip as address_zipcode,&#xA;&#x9;left(rtrim(ltrim(replace(replace(replace(Home_Phone,'-',''),'(',''),')',''))),10) as phone_primary,&#xA;&#x9;case&#xA;&#x9;&#x9;when FedEthnicity = 1 then 'Y'&#xA;&#x9;&#x9;when FedEthnicity = 0 then 'N'&#xA;&#x9;&#x9;else '' end as hispanic_latino,&#xA;&#x9;case&#xA;&#x9;&#x9;when (select count(distinct racecd) from dfw_studentRace race where race.studentid = InternalID) &gt; 1 then 'Two or More Races'&#xA;&#x9;&#x9;when (select count(distinct racecd) from dfw_studentRace race where race.studentid = InternalID) = 1 then (select replace(right(valuet,len(valuet)-4),'/ Other Pac','or Other Pacific') from dfw_gen gen where gen.value = (select distinct racecd from dfw_studentRace race where race.studentid = InternalID))&#xA;&#x9;&#x9;else '' end as ethnicity,&#xA;&#x9;'' as country_of_birth,&#xA;&#x9;'' as language_primary,&#xA;&#x9;'' as language_home,&#xA;&#x9;gender as gender,&#xA;&#x9;convert(char(8),cast(birthday as smalldatetime),112) as birthdate, -- should be in students table&#xA;&#x9;schoolid as school_id,&#xA;&#x9;(select [name] from dfw_schools where schoolid = school_number) as school_name,&#xA;&#x9;grade_level as grade,&#xA;&#x9;'' as homeroom,&#xA;&#x9;case&#xA;&#x9;&#x9;when enroll_status = 0 then 'A'&#xA;&#x9;&#x9;else 'I' end as [status],&#xA;&#x9;'' as homeless,&#xA;&#x9;'' as at_risk,&#xA;&#x9;case when (select top 1 econdis from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and econdis &lt;&gt; '' and econdis &lt;&gt; '00' ) is not null then 'Y' else 'N' end as ed,&#xA;&#x9;case when (select sped from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and sped &lt;&gt; '' ) is not null then 'Y' else null end as sped,&#xA;&#x9;(select top 1 lep_indicator from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and lep_indicator &lt;&gt; '' order by enter_date desc ) as lep,&#xA;&#x9;coalesce((select case when [504_E1603_INDICATOR] = '1' then 'Y' else 'N' end from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and [504_E1603_INDICATOR] = '1'),'N') as [504],&#xA;&#x9;coalesce((select case when dyslexia_flag = 'true' then 'Y' else 'N' end from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and dyslexia_flag &lt;&gt; ''),'N') as dyslexia,&#xA;&#x9;convert(char(8),cast(entrydate as smalldatetime),112) as date_enrolled,&#xA;&#x9;convert(char(8),cast(exitdate as smalldatetime),112) as date_withdrawn,&#xA;&#x9;exitcode as withdrawal_reason,&#xA;&#x9;'DFW' as ktx_district,&#xA;&#x9;null as Attendance_Present,&#xA;&#x9;'' as ktx_cohort,&#xA;&#x9;'' as kf_cohort,&#xA;&#x9;convert(char(8),cast(district_entry_date as smalldatetime),112) as Date_District_Entry,&#xA;&#x9;'' as RTI,&#xA;&#x9;2020&#xA;from&#xA;&#x9;DFW_Students&#xA;where cast(entrydate as smalldatetime) &gt;= '6/1/2019'&#xA;order by student_id&#xA;&#xA;&#xA;--reenrollments&#xA;insert into [ktx-sql-dw].ktx_analytics.dbo.consolidated_enrollment&#xA;select&#xA;&#x9;last_name as name_last,&#xA;&#x9;first_name as name_first,&#xA;&#x9;student_number as student_id,&#xA;&#x9;State_StudentNumber as student_id_state,&#xA;&#x9;street as address_line1,&#xA;&#x9;'' as address_line2,&#xA;&#x9;City as address_city,&#xA;&#x9;State as address_state,&#xA;&#x9;Zip as address_zipcode,&#xA;&#x9;left(rtrim(ltrim(replace(replace(replace(Home_Phone,'-',''),'(',''),')',''))),10) as phone_primary,&#xA;&#x9;case&#xA;&#x9;&#x9;when FedEthnicity = 1 then 'Y'&#xA;&#x9;&#x9;when FedEthnicity = 0 then 'N'&#xA;&#x9;&#x9;else '' end as hispanic_latino,&#xA;&#x9;case&#xA;&#x9;&#x9;when (select count(distinct racecd) from dfw_studentRace race where race.studentid = InternalID) &gt; 1 then 'Two or More Races'&#xA;&#x9;&#x9;when (select count(distinct racecd) from dfw_studentRace race where race.studentid = InternalID) = 1 then (select replace(right(valuet,len(valuet)-4),'/ Other Pac','or Other Pacific') from dfw_gen gen where gen.value = (select distinct racecd from dfw_studentRace race where race.studentid = InternalID))&#xA;&#x9;&#x9;else '' end as ethnicity,&#xA;&#x9;'' as country_of_birth,&#xA;&#x9;'' as language_primary,&#xA;&#x9;'' as language_home,&#xA;&#x9;gender as gender,&#xA;&#x9;convert(char(8),cast(birthday as smalldatetime),112) as birthdate, -- should be in students table&#xA;&#x9;reenrl.schoolid as school_id,&#xA;&#x9;(select [name] from dfw_schools where reenrl.schoolid = school_number) as school_name,&#xA;&#x9;reenrl.grade_level as grade,&#xA;&#x9;'' as homeroom,&#xA;&#x9;case&#xA;&#x9;&#x9;when enroll_status = 0 then 'A'&#xA;&#x9;&#x9;else 'I' end as [status],&#xA;&#x9;'' as homeless,&#xA;&#x9;'' as at_risk,&#xA;&#x9;case when (select econdis from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and econdis &lt;&gt; '' and econdis &lt;&gt; '00' ) is not null then 'Y' else 'N' end as ed,&#xA;&#x9;case when (select sped from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and sped &lt;&gt; '' ) is not null then 'Y' else null end as sped,&#xA;&#x9;(select top 1 lep_indicator from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and lep_indicator &lt;&gt; '' order by enter_date desc ) as lep,&#xA;&#x9;coalesce((select case when [504_E1603_INDICATOR] = '1' then 'Y' else 'N' end from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and [504_E1603_INDICATOR] = '1'),'N') as [504],&#xA;&#x9;coalesce((select case when dyslexia_flag = 'true' then 'Y' else 'N' end from DFW_SPEnrollments sp where studentid = internalid and sp.exit_date = '' and dyslexia_flag &lt;&gt; ''),'N') as dyslexia,&#xA;&#x9;convert(char(8),cast(reenrl.entrydate as smalldatetime),112) as date_enrolled,&#xA;&#x9;convert(char(8),cast(reenrl.exitdate as smalldatetime),112) as date_withdrawn,&#xA;&#x9;reenrl.exitcode as withdrawal_reason,&#xA;&#x9;'DFW' as ktx_district,&#xA;&#x9;null as Attendance_Present,&#xA;&#x9;'' as ktx_cohort,&#xA;&#x9;'' as kf_cohort,&#xA;&#x9;convert(char(8),cast(district_entry_date as smalldatetime),112) as Date_District_Entry,&#xA;&#x9;'' as RTI,&#xA;&#x9;2020&#xA;from&#xA;&#x9;DFW_Students stud join DFW_ReEnrollments reenrl on stud.internalid = reenrl.StudentID&#xA;where cast(reenrl.entrydate as smalldatetime) &gt;= '6/1/2019' and cast(reenrl.entrydate as smalldatetime) &lt; '6/1/2020'&#xA;&#xA;&#xA;delete from [ktx-sql-dw].[ktx_analytics].dbo.student_ids where ktx_district = 'dfw'&#xA;insert into [ktx-sql-dw].[ktx_analytics].dbo.student_ids&#xA;select&#xA;&#x9;last_name as name_last,&#xA;&#x9;first_name as name_first,&#xA;&#x9;student_number as student_id,&#xA;&#x9;State_StudentNumber as student_id_state,&#xA;&#x9;replace(ssn,'-','') as ssn,&#xA;&#x9;'dfw' as ktx_district,&#xA;&#x9;convert(char(8),cast(district_entry_date as smalldatetime),112)&#xA;from&#xA;&#x9;DFW_Students&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate from HOU"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9A8EB242-389A-4437-87F3-C9C4C8576F4C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate from HOU"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="--delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[Consolidated_Enrollment] where ktx_district = 'hou'&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].[Consolidated_Enrollment]&#xA;select&#xA;&#x9;r.name_l as&#x9;&#x9;Name_Last, -- varchar(50)&#xA;&#x9;r.name_f as&#x9;&#x9;Name_First, -- varchar(50)&#xA;&#x9;r.stu_id as&#x9;&#x9;Student_ID_Local, -- varchar(10)&#xA;&#x9;rp.unique_stu_id as&#x9;&#x9;Student_ID_State, -- varchar(32)&#xA;&#x9;rp.str_nbr_phys + ' ' +&#xA;&#x9;&#x9;case when rp.str_drctn_phys = '' then ''&#xA;&#x9;&#x9;&#x9;when rp.str_drctn_phys = ' ' then ''&#xA;&#x9;&#x9;&#x9;when rp.str_drctn_phys = '  ' then ''&#xA;&#x9;&#x9;&#x9;when rp.str_drctn_phys is null then ''&#xA;&#x9;&#x9;&#x9;else rp.str_drctn_phys + ' ' end + str_name_phys as&#x9;&#x9;Address_Line1, --varchar(265)&#xA;&#x9;rp.APT_NBR_PHYS_ADDR as&#x9;&#x9;Address_Line2, -- varchar(255)&#xA;&#x9;rp.CITY_NAME_PHYS_ADDR as&#x9;&#x9;Address_City, -- varchar(255)&#xA;&#x9;rp.PHYS_ADDR_STATE as&#x9;&#x9;Address_State, -- char(2)&#xA;&#x9;rp.ZIP_CODE_PHYS_ADDR +&#xA;&#x9;&#x9;case when rp.zip4_phys_addr = '' then ''&#xA;&#x9;&#x9;&#x9;when rp.zip4_phys_addr is null then ''&#xA;&#x9;&#x9;&#x9;else '-' + rp.zip4_phys_addr end as&#x9;&#x9;Address_ZipCode, -- varchar(10)&#xA;&#x9;'' as&#x9;&#x9;Phone_Primary, -- varchar(10)&#xA;&#x9;case&#xA;&#x9;&#x9;when rp.ETHN_HISPANIC = 1 then 'Y'&#xA;&#x9;&#x9;else 'N'&#xA;&#x9;&#x9;end as&#x9;&#x9;Hispanic_Latino, -- char(1),&#xA;&#x9;case&#xA;&#x9;&#x9;when rp.race_amer_indian + rp.race_asian + rp.race_black + rp.race_pacific_isl + rp.race_white not in&#xA;&#x9;&#x9;&#x9;('00001','00010','00100','01000','10000') then 'Two or More Races'&#xA;&#x9;&#x9;when rp.race_amer_indian = 1 then 'American Indian or Alaskan Native'&#xA;&#x9;&#x9;when rp.race_asian = 1 then 'Asian'&#xA;&#x9;&#x9;when rp.race_black = 1 then 'Black or African American'&#xA;&#x9;&#x9;when rp.race_pacific_isl = 1 then 'Native Hawaiian or Other Pacific Islander'&#xA;&#x9;&#x9;when rp.race_white = 1 then 'White'&#xA;&#x9;&#x9;end as&#x9;&#x9;Ethnicity, -- varchar(20)&#xA;&#x9;case when c.country_desc = 'U.S.A' then 'USA' else c.country_desc end as&#x9;&#x9;Country_of_Birth, -- varchar(25)&#xA;&#x9;(select homelang_descr from hou_et_c092_homelang where p.STU_LANG_CD = HOMELANG_CD and sch_yr = r.sch_yr)  as&#x9;&#x9;Language_Primary, -- varchar(25)&#xA;&#x9;(select homelang_descr from hou_et_c092_homelang where p.HOME_LANG_CD = HOMELANG_CD and sch_yr = r.sch_yr)  as&#x9;&#x9;Language_Home, -- varchar(25)&#xA;&#x9;rp.sex as&#x9;&#x9;Gender, -- varchar(2)&#xA;&#x9;convert(char(8),rp.dob,112) as&#x9;&#x9;Birthdate, -- char(8)  currently enrcrypted on prodbid&#xA;&#x9;r.campus_id as&#x9;&#x9;School_ID, -- Varchar(20),&#xA;&#x9;campus.campus_name as&#x9;&#x9;School_Name, -- Varchar(20),&#xA;&#x9;r.GRD_LVL as&#x9;&#x9;Grade, --  char(2)&#xA;&#x9;'' as&#x9;&#x9;Homeroom, -- char(5)&#xA;&#x9;case&#xA;&#x9;&#x9;when r.ACTIVE_CD = 1 and r.status_cd in (1,2,3) then 'A'&#xA;&#x9;&#x9;else 'I' end as&#x9;&#x9;[Status], -- char(1)&#xA;&#x9;case when rsk.homeless = 0 then 'N' else 'Y' end as&#x9;&#x9;Homeless,-- char(1)&#xA;&#x9;case&#xA;&#x9;&#x9;when rsk.at_risk = 0 then 'N'&#xA;&#x9;&#x9;when rsk.at_risk = 1 then 'Y'&#xA;&#x9;&#x9;else '' end as&#x9;&#x9;At_Risk, -- char(1)&#xA;&#x9;case when p.ECON_DISADV_CD = 0 then 'N' else 'Y' end  as&#x9;&#x9;ED, -- char(1),&#xA;&#x9;case when sped.PRI_HANDI_IND is not null then 'Y' else null end as&#x9;&#x9;SPED, -- char(1),&#xA;&#x9;bilesl.lep_ind as&#x9;&#x9;LEP, -- char(1),&#xA;&#x9;case when pother1.OTHER_SPEC_PGM = '504' then 'Y' else 'N' end as&#x9;&#x9;[504], -- char(1),&#xA;&#x9;case when pother2.OTHER_SPEC_PGM = 'DYS' then 'Y' else 'N' end  as&#x9;&#x9;Dyslexia, -- char(1), &#xA;&#x9;r.DT_ENTRY as&#x9;&#x9;Date_Enrolled, -- char(8)&#xA;&#x9;r.DT_WITHDRAW as&#x9;&#x9;Date_Withdrawn, -- char(8)&#xA;&#x9;r.withdraw_cd as&#x9;&#x9;Withdrawal_Reason, -- varchar(10)&#xA;&#x9;'HOU' as ktx_district,&#xA;&#x9;null as attendance_present,&#xA;&#x9;'' as ktx_cohort,&#xA;&#x9;'' as kf_cohort,&#xA;&#x9;'' as Date_District_Entry,&#xA;&#x9;case when pother3.stu_id is not null then 'Y' else '' end as RTI,&#xA;&#x9;2020&#xA;from&#xA;&#x9;hou_SR_STU_ENROLL r&#xA;&#x9;left outer join hou_SR_STU_DEMO rp on r.stu_id = rp.stu_id and r.SCH_YR = rp.SCH_YR&#xA;&#x9;left outer join hou_st_country c on c.country_cd = rp.birth_country_cd and c.sch_yr = r.sch_yr&#xA;&#x9;left outer join hou_sr_stu_demo_peims p on r.stu_id = p.stu_id and r.sch_yr = p.sch_yr&#xA;&#x9;left outer join hou_cr_demo campus on campus.campus_id = r.campus_id and campus.sch_yr = r.sch_yr&#xA;&#x9;left outer join hou_SR_STU_AT_RISK rsk on rsk.stu_id = r.stu_id and rsk.sch_yr = r.SCH_YR&#xA;&#x9;left outer join hou_SR_SPEC_PGM_SPEC_ED sped on sped.stu_id = r.stu_id and sped.sch_yr = r.sch_yr and sped.dt_wd = '' and r.campus_id = sped.campus_id&#xA;&#x9;left outer join hou_SR_SPEC_PGM_BIL_ESL bilesl on bilesl.stu_id = r.stu_id and bilesl.sch_yr = r.sch_yr and bilesl.dt_bil_esl_wd = '' and bilesl.campus_id = r.campus_id&#xA;&#x9;left outer join hou_SR_SPEC_PGM_OTHER pother1 on pother1.stu_id = r.stu_id and pother1.sch_yr = r.sch_yr and pother1.OTHER_SPEC_PGM = '504' and pother1.DT_wd = '' and pother1.wr_campus = r.campus_id&#xA;&#x9;left outer join hou_SR_SPEC_PGM_OTHER pother2 on pother2.stu_id = r.stu_id and pother2.sch_yr = r.sch_yr and pother2.OTHER_SPEC_PGM = 'dys' and pother2.DT_wd = '' and pother2.wr_campus = r.campus_id&#xA;&#x9;left outer join hou_SR_SPEC_PGM_OTHER pother3 on pother3.stu_id = r.stu_id and pother3.sch_yr = r.sch_yr and pother3.OTHER_SPEC_PGM = 'rti' and pother3.DT_wd = '' and pother3.wr_campus = r.campus_id&#xA;where&#xA;&#x9;r.SCH_YR  = (select max(SCH_YR) from hou_DR_CURRICULUM_CYR)&#xA;&#x9;and r.dt_entry &lt;&gt; ''&#xA;&#x9;and r.status_cd not in (4,5)&#xA;&#x9;&#xA;&#xA;--delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[Consolidated_Enrollment] where ktx_district = 'COU'&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].[Consolidated_Enrollment]&#xA;select&#xA;&#x9;r.Stu_Last_Name as&#x9;&#x9;Name_Last, -- varchar(50)&#xA;&#x9;r.Stu_First_Name as&#x9;&#x9;Name_First, -- varchar(50)&#xA;&#x9;r.Other_ID as&#x9;&#x9;Student_ID_Local, -- varchar(10)&#xA;&#x9;r.TSDS_ID as&#x9;&#x9;Student_ID_State, -- varchar(32)&#xA;&#x9;r.Street_Number + ' ' +&#xA;&#x9;&#x9;case when r.Street_Dir = '' then ''&#xA;&#x9;&#x9;&#x9;else r.Street_Dir + ' ' end + r.Street_Name as&#x9;&#x9;Address_Line1, --varchar(265)&#xA;&#x9;'' as&#x9;&#x9;Address_Line2, -- varchar(255)&#xA;&#x9;r.City as&#x9;&#x9;Address_City, -- varchar(255)&#xA;&#x9;'TX' as&#x9;&#x9;Address_State, -- char(2)&#xA;&#x9;r.Zip_Code as&#x9;&#x9;Address_ZipCode, -- varchar(10)&#xA;&#x9;replace(replace(replace(replace(r.G1_Pri_Phone,'(',''),')',''),'-',''),' ','') as&#x9;&#x9;Phone_Primary, -- varchar(10)&#xA;&#x9;case&#xA;&#x9;&#x9;when r.Hisp_Lat_Eth = 'Yes' then 'Y'&#xA;&#x9;&#x9;else 'N'&#xA;&#x9;&#x9;end as&#x9;&#x9;Hispanic_Latino, -- char(1),&#xA;&#x9;case&#xA;&#x9;&#x9;when r.Am_Ind_AK_Nat = 'Y' then 'American Indian or Alaskan Native'&#xA;&#x9;&#x9;when r.Asian = 'Y' then 'Asian'&#xA;&#x9;&#x9;when r.Black_Afr_Amer = 'Y' then 'Black or African American'&#xA;&#x9;&#x9;when r.Nat_HA_Oth_PI = 'Y' then 'Native Hawaiian or Other Pacific Islander'&#xA;&#x9;&#x9;when r.White = 'Y' then 'White'&#xA;&#x9;&#x9;end as&#x9;&#x9;Ethnicity, -- varchar(20)&#xA;&#x9;'' as&#x9;&#x9;Country_of_Birth, -- varchar(25)&#xA;&#x9;'' as&#x9;&#x9;Language_Primary, -- varchar(25)&#xA;&#x9;'' as&#x9;&#x9;Language_Home, -- varchar(25)&#xA;&#x9;case when r.gender = 'Male' then 'M' else 'F' end as&#x9;&#x9;Gender, -- varchar(2)&#xA;&#x9;convert(char(8),r.Birthdate,112) as&#x9;&#x9;Birthdate, -- char(8)  currently enrcrypted on prodbid&#xA;&#x9;'101920041' as&#x9;&#x9;School_ID, -- Varchar(20),&#xA;&#x9;'KIPP Courage' as&#x9;&#x9;School_Name, -- Varchar(20),&#xA;&#x9;r.Student_Grade as&#x9;&#x9;Grade, --  char(2)&#xA;&#x9;'' as&#x9;&#x9;Homeroom, -- char(5)&#xA;&#x9;case&#xA;&#x9;&#x9;when r.Student_Status = 'A' then 'A'&#xA;&#x9;&#x9;else 'I' end as&#x9;&#x9;[Status], -- char(1)&#xA;&#x9;coalesce((select case when homeless_status = 'Yes' then 'Y' when homeless_status = 'No' then 'N' else '' end from hou_courage_specprog sp where sp.other_id = r.other_id),'') as&#x9;&#x9;Homeless,-- char(1)&#xA;&#x9;case&#xA;&#x9;&#x9;when r.At_Risk_Status = 'No' then 'N'&#xA;&#x9;&#x9;when r.At_Risk_Status = 'Yes' then 'Y'&#xA;&#x9;&#x9;else '' end as&#x9;&#x9;At_Risk, -- char(1)&#xA;&#x9;case when r.Econ_Dis_Code = 0 then 'N' else 'Y' end  as&#x9;&#x9;ED, -- char(1),&#xA;&#x9;case when r.Spec_Ed_Status = 'Yes' then 'Y' else null end as&#x9;&#x9;SPED, -- char(1),&#xA;&#x9;case when r.LEP_Status = 'Yes' then 'Y' else 'N' end as&#x9;&#x9;LEP, -- char(1),&#xA;&#x9;case when r.Sect_504_Status = 'Yes' then 'Y' else 'N' end as&#x9;&#x9;[504], -- char(1),&#xA;&#x9;''  as&#x9;&#x9;Dyslexia, -- char(1), &#xA;&#x9;convert(varchar(8),cast(r.Entry_Date as smalldatetime),112) as&#x9;&#x9;Date_Enrolled, -- char(8)&#xA;&#x9;case when r.Withdrawal_Date &lt;&gt; '' then convert(varchar(8),cast(r.Withdrawal_Date as smalldatetime),112) else '' end as&#x9;&#x9;Date_Withdrawn, -- char(8)&#xA;&#x9;r.Withdrawal_Code as&#x9;&#x9;Withdrawal_Reason, -- varchar(10)&#xA;&#x9;'COU' as ktx_district,&#xA;&#x9;null as attendance_present,&#xA;&#x9;'' as ktx_cohort,&#xA;&#x9;'' as kf_cohort,&#xA;&#x9;'' as Date_District_Entry,&#xA;&#x9;null as RTI,&#xA;&#x9;2020&#xA;&#x9;&#xA;from&#xA;&#x9;HOU_Courage_Enroll r&#xA;&#x9;&#xA;&#xA;delete from [ktx-sql-dw].[ktx_analytics].dbo.student_ids where ktx_district = 'hou'&#xA;insert into [ktx-sql-dw].[ktx_analytics].dbo.student_ids&#xA;select distinct&#xA;&#x9;r.name_l as name_last,&#xA;&#x9;r.name_f as name_first,&#xA;&#x9;r.stu_id as student_id,&#xA;&#x9;(select top 1 unique_stu_id from hou_sr_stu_demo rp2 where rp2.stu_id = r.stu_id order by unique_stu_id desc) as student_id_state,&#xA;&#x9;replace (r.state_stu_id, '-', '') as ssn,&#xA;&#x9;'HOU' as ktx_district,&#xA;&#x9; (select top 1 dt_entry from hou_SR_STU_ENROLL r2 where r2.stu_id = r.stu_id order by dt_entry)&#xA;from&#xA;&#x9;HOU_SR_STU_ENROLL r&#xA;&#x9;left outer join HOU_SR_STU_DEMO rp on r.stu_id = rp.stu_id and r.SCH_YR = rp.SCH_YR&#xA;where r.sch_yr &gt;= 2016&#xA;&#xA;delete from [ktx-sql-dw].[ktx_analytics].dbo.student_ids where ktx_district = 'COU'&#xA;&#x9;and student_id_state in (select tsds_id from hou_courage_enroll) -- added because we don't have historic Courage data&#xA;insert into [ktx-sql-dw].[ktx_analytics].dbo.student_ids&#xA;select distinct&#xA;&#x9;r.Stu_Last_Name as name_last,&#xA;&#x9;r.Stu_First_Name as name_first,&#xA;&#x9;r.Other_ID as student_id,&#xA;&#x9;r.TSDS_ID as student_id_state,&#xA;&#x9;replace(r.PEIMS_ID, '-', '') as ssn,&#xA;&#x9;'COU' as ktx_district,&#xA;&#x9;'' as district_entry_date&#xA;from&#xA;&#x9;hou_courage_enroll r&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate from SAT"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EB59AFF4-098A-499A-BE16-71CF82A1667C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate from SAT"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="-- delete from [KTX-SQL-DW].[KTX_Analytics].[dbo].[Consolidated_Enrollment] where ktx_district = 'sat'&#xA;insert into [KTX-SQL-DW].[KTX_Analytics].[dbo].[Consolidated_Enrollment]&#xA;select&#xA;&#x9;r.name_l as&#x9;&#x9;&#x9;Name_Last, -- varchar(50)&#xA;&#x9;r.name_f as&#x9;&#x9;&#x9;Name_First, -- varchar(50)&#xA;&#x9;r.stu_id as&#x9;&#x9;&#x9;Student_ID_Local, -- varchar(10)&#xA;&#x9;rp.unique_stu_id as&#x9;&#x9;&#x9;Student_ID_State, -- varchar(32)&#xA;&#x9;rp.str_nbr_phys + ' ' +&#xA;&#x9;&#x9;case when rp.str_drctn_phys = '' then ''&#xA;&#x9;&#x9;&#x9;when rp.str_drctn_phys = ' ' then ''&#xA;&#x9;&#x9;&#x9;when rp.str_drctn_phys = '  ' then ''&#xA;&#x9;&#x9;&#x9;when rp.str_drctn_phys is null then ''&#xA;&#x9;&#x9;&#x9;else rp.str_drctn_phys + ' ' end + str_name_phys as&#x9;&#x9;Address_Line1, --varchar(265)&#xA;&#x9;rp.APT_NBR_PHYS_ADDR as&#x9;&#x9;Address_Line2, -- varchar(255)&#xA;&#x9;rp.CITY_NAME_PHYS_ADDR as&#x9;&#x9;Address_City, -- varchar(255)&#xA;&#x9;rp.PHYS_ADDR_STATE as&#x9;&#x9;Address_State, -- char(2)&#xA;&#x9;rp.ZIP_CODE_PHYS_ADDR +&#xA;&#x9;&#x9;case when rp.zip4_phys_addr = '' then ''&#xA;&#x9;&#x9;&#x9;when rp.zip4_phys_addr is null then ''&#xA;&#x9;&#x9;&#x9;else '-' + rp.zip4_phys_addr end as&#x9;&#x9;Address_ZipCode, -- varchar(10)&#xA;&#x9;'' as&#x9;&#x9;Phone_Primary, -- varchar(10)&#xA;&#x9;case&#xA;&#x9;&#x9;when rp.ETHN_HISPANIC = 1 then 'Y'&#xA;&#x9;&#x9;else 'N'&#xA;&#x9;&#x9;end as&#x9;&#x9;Hispanic_Latino, -- char(1),&#xA;&#x9;case&#xA;&#x9;&#x9;when rp.race_amer_indian + rp.race_asian + rp.race_black + rp.race_pacific_isl + rp.race_white not in&#xA;&#x9;&#x9;&#x9;('00001','00010','00100','01000','10000') then 'Two or More Races'&#xA;&#x9;&#x9;when rp.race_amer_indian = 1 then 'American Indian or Alaskan Native'&#xA;&#x9;&#x9;when rp.race_asian = 1 then 'Asian'&#xA;&#x9;&#x9;when rp.race_black = 1 then 'Black or African American'&#xA;&#x9;&#x9;when rp.race_pacific_isl = 1 then 'Native Hawaiian or Other Pacific Islander'&#xA;&#x9;&#x9;when rp.race_white = 1 then 'White'&#xA;&#x9;&#x9;end as&#x9;&#x9;Ethnicity, -- varchar(20)&#xA;&#x9;case&#xA;&#x9;&#x9;when c.country_desc = 'U.S.A' then 'USA'&#xA;&#x9;&#x9;else c.country_desc&#xA;&#x9;&#x9;end as&#x9;&#x9;Country_of_Birth, -- varchar(25)&#xA;&#x9;(select homelang_descr from sat_et_c092_homelang where p.STU_LANG_CD = HOMELANG_CD and sch_yr = r.sch_yr)  as&#x9;&#x9;Language_Primary, -- varchar(25)&#xA;&#x9;(select homelang_descr from sat_et_c092_homelang where p.HOME_LANG_CD = HOMELANG_CD and sch_yr = r.sch_yr)  as&#x9;&#x9;Language_Home, -- varchar(25)&#xA;&#x9;rp.sex as&#x9;&#x9;Gender, -- varchar(2)&#xA;&#x9;convert(char(8),rp.dob,112) as&#x9;&#x9;Birthdate, -- char(8)&#xA;&#x9;r.campus_id as&#x9;&#x9;School_ID, -- Varchar(20),&#xA;&#x9;campus.campus_name as&#x9;&#x9;School_Name, -- Varchar(20),&#xA;&#x9;left(ltrim(rtrim(r.GRD_LVL)),2) as&#x9;&#x9;Grade, --  char(2)&#xA;&#x9;'' as&#x9;&#x9;Homeroom, -- char(5)&#xA;&#x9;case&#xA;&#x9;&#x9;when r.ACTIVE_CD = 1 and r.status_cd in (1,2,3) then 'A'&#xA;&#x9;&#x9;else 'I' end as&#x9;&#x9;[Status], -- char(1)&#xA;&#x9;case when rsk.homeless = 0 then 'N' else 'Y' end as&#x9;&#x9;Homeless,-- char(1)&#xA;&#x9;case&#xA;&#x9;&#x9;when rsk.at_risk = 0 then 'N'&#xA;&#x9;&#x9;when rsk.at_risk = 1 then 'Y'&#xA;&#x9;&#x9;else '' end as&#x9;&#x9;At_Risk, -- char(1)&#xA;&#x9;case when p.ECON_DISADV_CD = 0 then 'N' else 'Y' end  as&#x9;&#x9;&#x9;ED, -- char(1),&#xA;&#x9;case when sped.PRI_HANDI_IND is not null then 'Y' else null end as&#x9;&#x9;&#x9;SPED, -- char(1),&#xA;&#x9;bilesl.lep_ind as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;LEP, -- char(1),&#xA;&#x9;case when pother1.OTHER_SPEC_PGM = '504' then 'Y' else 'N' end as&#x9;&#x9;[504], -- char(1),&#xA;&#x9;case when pother2.OTHER_SPEC_PGM = 'DYS' then 'Y' else 'N' end  as&#x9;&#x9;Dyslexia, -- char(1), &#xA;&#x9;r.DT_ENTRY as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Date_Enrolled, -- char(8)&#xA;&#x9;r.DT_WITHDRAW as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Date_Withdrawn, -- char(8)&#xA;&#x9;r.withdraw_cd as&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Withdrawal_Reason, -- varchar(10)&#xA;&#x9;'SAT' as ktx_district,&#xA;&#x9;cast(a.prv_yr_att_ytd as float)/(cast(a.prv_yr_abs_ytd as float) + cast(a.prv_yr_att_ytd as float)) as Attendance_Present,&#xA;&#x9;'' as ktx_cohort,&#xA;&#x9;'' as kf_cohort,&#xA;&#x9;'' as Date_District_Entry,&#xA;&#x9;case when pother3.stu_id is not null then 'Y' else '' end as RTI,&#xA;&#x9;2020&#xA;from&#xA;&#x9;SAT_SR_STU_ENROLL r&#xA;&#x9;left outer join SAT_SR_STU_DEMO rp on r.stu_id = rp.stu_id and r.SCH_YR = rp.SCH_YR&#xA;&#x9;left outer join sat_st_country c on c.country_cd = rp.birth_country_cd and c.sch_yr = r.sch_yr&#xA;&#x9;left outer join sat_sr_stu_demo_peims p on r.stu_id = p.stu_id and r.sch_yr = p.sch_yr&#xA;&#x9;left outer join SAT_CR_DEMO campus on campus.campus_id = r.campus_id and campus.sch_yr = r.SCH_YR&#xA;&#x9;left outer join sat_SR_STU_AT_RISK rsk on rsk.stu_id = r.stu_id and rsk.sch_yr = r.SCH_YR&#xA;&#x9;left outer join sat_SR_SPEC_PGM_SPEC_ED sped on sped.stu_id = r.stu_id and sped.sch_yr = r.sch_yr and sped.dt_wd = '' and r.campus_id = sped.campus_id&#xA;&#x9;left outer join sat_SR_SPEC_PGM_BIL_ESL bilesl on bilesl.stu_id = r.stu_id and bilesl.sch_yr = r.sch_yr and bilesl.dt_bil_esl_wd = '' and bilesl.campus_id = r.campus_id&#xA;&#x9;left outer join sat_SR_SPEC_PGM_OTHER pother1 on pother1.stu_id = r.stu_id and pother1.sch_yr = r.sch_yr and pother1.OTHER_SPEC_PGM = '504' and pother1.DT_wd = '' and pother1.wr_campus = r.campus_id&#xA;&#x9;left outer join sat_SR_SPEC_PGM_OTHER pother2 on pother2.stu_id = r.stu_id and pother2.sch_yr = r.sch_yr and pother2.OTHER_SPEC_PGM = 'dys' and pother2.DT_wd = '' and pother2.wr_campus = r.campus_id&#xA;&#x9;left outer join sat_SR_SPEC_PGM_OTHER pother3 on pother3.stu_id = r.stu_id and pother3.sch_yr = r.sch_yr and pother3.OTHER_SPEC_PGM = 'rti' and pother3.DT_wd = '' and pother3.wr_campus = r.campus_id&#xA;&#x9;left outer join SAT_SR_STU_YRLY_ATT_ABS a on a.stu_id = r.stu_id and a.sch_yr = r.sch_yr and a.prv_yr_att_ytd &lt;&gt; '000'&#xA;&#xA;where&#xA;&#x9;r.SCH_YR  = (select max(SCH_YR) from SAT_DR_CURRICULUM_CYR)&#xA;&#x9;and r.dt_entry &lt;&gt; ''&#xA;&#x9;and r.status_cd not in (4,5)&#xA;&#xA;&#xA;delete from [ktx-sql-dw].[ktx_analytics].dbo.student_ids where ktx_district = 'sat'&#xA;insert into [ktx-sql-dw].[ktx_analytics].dbo.student_ids&#xA;select distinct&#xA;&#x9;r.name_l as name_last,&#xA;&#x9;r.name_f as name_first,&#xA;&#x9;r.stu_id as student_id,&#xA;&#x9;(select top 1 unique_stu_id from sat_sr_stu_demo rp2 where rp2.stu_id = r.stu_id order by unique_stu_id desc) as student_id_state,&#xA;&#x9;r.state_stu_id as ssn,&#xA;&#x9;'SAT' as ktx_district,&#xA;&#x9; (select top 1 dt_entry from SAT_SR_STU_ENROLL r2 where r2.stu_id = r.stu_id order by dt_entry)&#xA;from&#xA;&#x9;SAT_SR_STU_ENROLL &#x9;&#x9;r&#xA;&#x9;left outer join SAT_SR_STU_DEMO &#x9;rp on r.stu_id = rp.stu_id and r.SCH_YR = rp.SCH_YR&#xA;where r.sch_yr &gt;= 2016&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Post Processing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5CFE86C1-2DA4-4E78-9730-5EE95B41BE1C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post Processing"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C6C08090-E924-4F2D-AC08-D0ACDEE62C21}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="--moved post processing on to this server, faster to run this way.&#xA;&#xA;delete from Consolidated_Enrollment&#xA;insert into Consolidated_Enrollment select * from [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment&#xA;&#xA;update  consolidated_enrollment set grade = '0' + grade where len(grade) = 1&#xA;update  consolidated_enrollment set ethnicity = 'Hispanic' where hispanic_latino = 'y'&#xA;update  consolidated_enrollment set grade ='KG' where grade = '00' and ktx_district = 'DFW'&#xA;update  consolidated_enrollment set grade = 'PK' where grade = '-1'&#xA;update consolidated_enrollment set grade = case when birthdate &gt;= '20150901' then 'P3' else 'P4' end where grade like 'p%'&#xA;update consolidated_enrollment set ktx_cohort = case when date_enrolled &lt;= '20190904' then 'Y' else 'N' end&#xA;update consolidated_enrollment set kf_cohort = case when date_enrolled &lt;= '20191001' then 'Y' else 'N' end&#xA;update consolidated_enrollment set rti = '' where rti is null&#xA;&#xA;/* Commented out - these don't need to be run daily!&#xA;update [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment_historic&#xA;&#x9;set ktx_cohort = case when date_enrolled &lt;= '20160903' then 'Y' else 'N' end&#xA;&#x9;where date_enrolled &gt;= '20160801' and date_enrolled &lt; '20170801'&#xA;update [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment_historic&#xA;&#x9;set kf_cohort = case when date_enrolled &lt;= '20161001' then 'Y' else 'N' end&#xA;&#x9;where date_enrolled &gt;= '20160801' and date_enrolled &lt; '20170801'&#xA;&#xA;update [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment_historic&#xA;&#x9;set ktx_cohort = case when date_enrolled &lt;= '20170905' then 'Y' else 'N' end&#xA;&#x9;where date_enrolled &gt;= '20170801' and date_enrolled &lt; '20180801'&#xA;update [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment_historic&#xA;&#x9;set kf_cohort = case when date_enrolled &lt;= '20171001' then 'Y' else 'N' end&#xA;&#x9;where date_enrolled &gt;= '20170801' and date_enrolled &lt; '20180801'&#xA;*/&#xA;&#xA;delete from [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment&#xA;insert into [ktx-sql-dw].[ktx_analytics].dbo.consolidated_enrollment select * from consolidated_Enrollment&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A6BD10F5-6D3F-4BD9-9169-28F55DD4A913}"
+      DTS:From="Package\Empty DW Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Populate from HOU" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5F48483F-7059-40B1-A8ED-21CDC6611814}"
+      DTS:From="Package\Populate from HOU"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Populate from SAT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{5D0AD7B2-601D-4E25-AA5E-A0AD19A3E403}"
+      DTS:From="Package\GradePeriod Grades"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Discipline" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{961AC912-B1A5-44CD-94AD-98D201667EAD}"
+      DTS:From="Package\Populate from SAT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Populate from AUS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{7179FFD7-A69F-43AD-A15A-7027BA75A8A1}"
+      DTS:From="Package\Populate from AUS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Populate from DFW" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{982B83F4-B521-4A7A-9180-F3A38416B585}"
+      DTS:From="Package\Populate from DFW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Post Processing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{FE4F4F5F-D7F1-4E1D-9E4B-C588838B0F6D}"
+      DTS:From="Package\Post Processing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Attendance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{95D4ECE2-09A7-4D06-BBFF-BBF83484F01A}"
+      DTS:From="Package\Attendance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\AbsenceReasons" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{ED9BED63-1391-44F0-BCF0-588AEB1A9F82}"
+      DTS:From="Package\AbsenceReasons"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\HistoricalByStudent" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{ABC01870-0490-48F2-AA96-7F453C4C459D}"
+      DTS:From="Package\HistoricalByStudent"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\GradePeriod Grades" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{F2B0C714-631E-4DF9-992A-ABDAF61A9A11}"
+      DTS:From="Package\Discipline"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Execute SQL Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\AbsenceReasons"
+          TopLeft="313,32" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Attendance"
+          TopLeft="324,113" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Discipline"
+          TopLeft="585,184" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Empty DW Tables"
+          TopLeft="74,43" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="585,268" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\GradePeriod Grades"
+          TopLeft="556,111" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\HistoricalByStudent"
+          TopLeft="554,31" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Populate from AUS"
+          TopLeft="70,271" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Populate from DFW"
+          TopLeft="321,272" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Populate from HOU"
+          TopLeft="75,117" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Populate from SAT"
+          TopLeft="71,197" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Post Processing"
+          TopLeft="320,195" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="157.75,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="158.5,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="644.5,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="155.5,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="238,292.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,0"
+              Start="0,0"
+              End="75.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="406.5,272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,-35"
+              Start="0,0"
+              End="-10.5,-27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-13.5"
+                    Point2="0,-17.5"
+                    Point3="-4,-17.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,-17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,-17.5"
+                    Point2="-10.5,-17.5"
+                    Point3="-10.5,-21.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,-27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="393,195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-40"
+              Start="0,0"
+              End="0,-32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="390.75,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-39"
+              Start="0,0"
+              End="0,-31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="470,52.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,0"
+              Start="0,0"
+              End="76.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="76.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="640.75,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="646.5,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20,42"
+              Start="0,0"
+              End="20,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="4,21" />
+                  <mssgle:LineSegment
+                    End="16,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,21"
+                    Point2="20,21"
+                    Point3="20,25" />
+                  <mssgle:LineSegment
+                    End="20,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
